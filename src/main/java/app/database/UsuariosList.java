@@ -6,7 +6,7 @@ import java.util.ArrayList;
 
 public class UsuariosList {
 
-    static ArrayList<Funcionario> funcionarios = new ArrayList<>();
+    public static ArrayList<Funcionario> funcionarios = new ArrayList<>();
 
     //this method will add new Employees to the array
     public static void addFuncionario(Funcionario funcionario){
@@ -14,6 +14,10 @@ public class UsuariosList {
         System.out.println("Funcionário adicionado com sucesso!");
         //call method to reload the txt file with new clients
 
+    }
+
+    public static ArrayList<Funcionario> getFuncionarios() {
+        return funcionarios;
     }
 
     //este método receberá os funcionários da lista
