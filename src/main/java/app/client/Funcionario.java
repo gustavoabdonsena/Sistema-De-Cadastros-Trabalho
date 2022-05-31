@@ -6,14 +6,14 @@ public class Funcionario {
     String name;
     String code;
     String cargo;
-    int dependentes;
+    int qtdDependentes;
     double salary;
     double bonus;
 
     //lista de dependentes para o funcionário
     ArrayList<Dependente> dependentesList = new ArrayList<>();
 
-    public Funcionario(String name, String code, String cargo, int dependentes, double salary) {
+    public Funcionario(String name, String code, String cargo, int qtdDependentes, double salary) {
         this.name = name;
         this.cargo = cargo;
 
@@ -21,10 +21,10 @@ public class Funcionario {
         this.code = code;
 
         //setando dependentes
-        if(dependentes >= 0)
+        if(qtdDependentes >= 0)
         {
-            this.dependentes = dependentes;
-            calcBonus(dependentes);
+            this.qtdDependentes = qtdDependentes;
+            calcBonus(qtdDependentes);
         }
         else
         {
@@ -38,11 +38,7 @@ public class Funcionario {
         else {
             throw new IllegalArgumentException("O valor do salário deve ser >= 0.0");
         }
-        calcBonus(dependentes);
-    }
-
-    public Funcionario(){
-
+        calcBonus(qtdDependentes);
     }
 
     public String getName() {
@@ -89,12 +85,12 @@ public class Funcionario {
 
     }
 
-    public void setDependentes(int dependentes) {
+    public void setQtdDependentes(int qtdDependentes) {
 
-        if(dependentes >= 0)
+        if(qtdDependentes >= 0)
         {
-            this.dependentes = dependentes;
-            calcBonus(dependentes);
+            this.qtdDependentes = qtdDependentes;
+            calcBonus(qtdDependentes);
         }
         else
         {
@@ -103,12 +99,12 @@ public class Funcionario {
 
     }
 
-    public int getDependentes() {
-        return dependentes;
+    public ArrayList<Dependente> getQtdDependentes() {
+        return dependentesList;
     }
 
     public void calcBonus(double bonus) {
-        this.bonus = 1 + 0.02 * this.dependentes;
+        this.bonus = 1 + 0.02 * this.qtdDependentes;
     }
 
     public double showBonus(){

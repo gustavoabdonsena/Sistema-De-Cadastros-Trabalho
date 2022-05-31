@@ -1,6 +1,5 @@
 package app.database;
 
-import app.client.Funcionario;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 
@@ -31,8 +30,16 @@ public class FileStorage {
         }
     }
 
+    private void deleteFile(){
+
+    }
+
     public static void loadList(){
 
+
+    }
+
+    private static void verificaCodigo(){
 
     }
 
@@ -44,13 +51,40 @@ public class FileStorage {
 
             BufferedWriter writer = new BufferedWriter(new FileWriter("database.txt"));
 
-            for (Funcionario funcionario: UsuariosList.funcionarios) {
-                System.out.println("Entrou");
-                String str = "fc.getCode() + - + fc.getName() +  -  + fc.getCargo() +  - ";
-                writer.write(str);
-                writer.newLine();
-            }
+            UsuariosList.funcionarios.forEach(functionary -> {
 
+                try {
+                    //responsavel por receber o array de nomes de dependentes
+                    StringBuilder dependentes = new StringBuilder();
+
+                    dependentes.append('{');
+
+                    functionary.getQtdDependentes().forEach(dependente -> {
+
+                        dependentes.append('{').append(dependente.getName()).append(',');
+
+                    });
+                    dependentes.append('}');
+
+                    //debug para dependentes
+                    System.out.println(dependentes);
+
+                    
+                    //gera a estrutura do arquivo TXT
+                    String str = functionary.getCode() +
+                            " - " + functionary.getName() +
+                            " - " + functionary.getCargo() +
+                            " - " + functionary.getSalary() +
+                            " - " + dependentes;
+
+                    writer.write(str);
+                    writer.newLine();
+                }
+                catch (IOException e){
+                    e.printStackTrace();
+                }
+
+            });
 
             writer.close();
 

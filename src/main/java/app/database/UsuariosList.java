@@ -12,6 +12,7 @@ public class UsuariosList {
     public static void addFuncionario(Funcionario funcionario){
        // funcionarios.add(funcionario);
         System.out.println("Funcionário adicionado com sucesso!");
+        funcionarios.add(funcionario);
         //call method to reload the txt file with new clients
 
     }
