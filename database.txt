@@ -1,2 +1,10 @@
-XFCE451 - Carlos - Gerente - 3550.0 - {}
-ABCSD - JOAO - Gerente - 3550.0 - {}
+Codigo:XFCE451{  nome: Carlos, cargo: Gerente, salario: 3550.0, dependentes: [null,null,null] }
+Codigo:ABCSD{  nome: JOAO, cargo: Gerente, salario: 3550.0, dependentes: [null,null,null] }
+Codigo:XFCE451{  nome: Carlos, cargo: Gerente, salario: 3550.0, dependentes: [null,null,null] }
+Codigo:ABCSD{  nome: JOAO, cargo: Gerente, salario: 3550.0, dependentes: [null,null,null] }
+Codigo:XFCE451{  nome: Carlos, cargo: Gerente, salario: 3550.0, dependentes: [null,null,null] }
+Codigo:ABCSD{  nome: JOAO, cargo: Gerente, salario: 3550.0, dependentes: [null,null,null] }
+Codigo:XFCE451{  nome: Carlos, cargo: Gerente, salario: 3550.0, dependentes: [null,null,null] }
+Codigo:ABCSD{  nome: JOAO, cargo: Gerente, salario: 3550.0, dependentes: [null,null,null] }
+Codigo:XFCE451{  nome: Carlos, cargo: Gerente, salario: 3550.0, dependentes: [null,null,null] }
+Codigo:ABCSD{  nome: JOAO, cargo: Gerente, salario: 3550.0, dependentes: [null,null,null] }

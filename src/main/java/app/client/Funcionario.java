@@ -10,10 +10,11 @@ public class Funcionario {
     double salary;
     double bonus;
 
-    //lista de dependentes para o funcionário
-    ArrayList<Dependente> dependentesList = new ArrayList<>();
+    //Array de funcionários
+    Dependente[] dependentes;
 
     public Funcionario(String name, String code, String cargo, int qtdDependentes, double salary) {
+
         this.name = name;
         this.cargo = cargo;
 
@@ -25,6 +26,13 @@ public class Funcionario {
         {
             this.qtdDependentes = qtdDependentes;
             calcBonus(qtdDependentes);
+
+            //Método para adicionar os dependentes
+            dependentes = new Dependente[qtdDependentes];
+            for (int i = 0;i < dependentes.length;i++){
+                System.out.println("pedir nome dependente numero: " + i);
+            }
+
         }
         else
         {
@@ -99,9 +107,18 @@ public class Funcionario {
 
     }
 
-    public ArrayList<Dependente> getQtdDependentes() {
-        return dependentesList;
+    public int getQtdDependentes() {
+        return qtdDependentes;
     }
+
+    public void setDependentes(Dependente[] dependentes) {
+        this.dependentes = dependentes;
+    }
+
+    public Dependente[] getDependentes() {
+        return dependentes;
+    }
+
 
     public void calcBonus(double bonus) {
         this.bonus = 1 + 0.02 * this.qtdDependentes;

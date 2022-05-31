@@ -1,5 +1,7 @@
 package app.database;
 
+import app.client.Dependente;
+import app.client.Funcionario;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 
@@ -30,10 +32,6 @@ public class FileStorage {
         }
     }
 
-    private void deleteFile(){
-
-    }
-
     public static void loadList(){
 
 
@@ -57,25 +55,31 @@ public class FileStorage {
                     //responsavel por receber o array de nomes de dependentes
                     StringBuilder dependentes = new StringBuilder();
 
-                    dependentes.append('{');
+                    dependentes.append('[');
 
-                    functionary.getQtdDependentes().forEach(dependente -> {
+                    for (int i = 0; i < functionary.getDependentes().length;i++)
+                    {
+                        dependentes.append(functionary.getDependentes()[i]);
 
-                        dependentes.append('{').append(dependente.getName()).append(',');
+                        if (i != (functionary.getQtdDependentes() - 1))
+                        {
+                            dependentes.append(",");
+                        }
+                    }
 
-                    });
-                    dependentes.append('}');
+                    dependentes.append(']');
 
                     //debug para dependentes
                     System.out.println(dependentes);
 
-                    
+
                     //gera a estrutura do arquivo TXT
-                    String str = functionary.getCode() +
-                            " - " + functionary.getName() +
-                            " - " + functionary.getCargo() +
-                            " - " + functionary.getSalary() +
-                            " - " + dependentes;
+                    String str = "Codigo:" + functionary.getCode() + "{ "
+                            + " nome: " + functionary.getName() + ","
+                            + " cargo: " + functionary.getCargo() + ","
+                            + " salario: " + functionary.getSalary() + ","
+                            + " dependentes: " + dependentes
+                            + " }";
 
                     writer.write(str);
                     writer.newLine();

@@ -17,6 +17,7 @@ public class HelloController {
         UsuariosList.addFuncionario(new Funcionario("JOAO","ABCSD","Gerente",3,3550));
         FileStorage.saveList();
 
+
         welcomeText.setText("Funcionário adicionado!");
     }
 
