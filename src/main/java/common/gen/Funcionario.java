@@ -1,4 +1,4 @@
-package com.example.av3final.gen;
+package common.gen;
 
 import java.util.ArrayList;
 public class Funcionario {

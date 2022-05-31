@@ -1,4 +1,4 @@
-package com.example.av3final.gen;
+package common.gen;
 
 public class Dependente {
     String name;

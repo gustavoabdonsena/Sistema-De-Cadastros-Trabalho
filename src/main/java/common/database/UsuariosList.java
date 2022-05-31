@@ -1,6 +1,6 @@
-package com.example.av3final.database;
+package common.database;
 
-import com.example.av3final.gen.Funcionario;
+import common.gen.Funcionario;
 
 import java.util.ArrayList;
 

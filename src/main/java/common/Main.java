@@ -1,4 +1,4 @@
-package com.example.av3final;
+package common;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
