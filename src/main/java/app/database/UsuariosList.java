@@ -16,6 +16,10 @@ public class UsuariosList {
 
     }
 
+    public static ArrayList<Funcionario> getFuncionarios() {
+        return funcionarios;
+    }
+
     //este método receberá os funcionários da lista
     public static boolean loadFuncionariosList(){
 
