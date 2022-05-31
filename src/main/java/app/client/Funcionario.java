@@ -1,4 +1,4 @@
-package common.gen;
+package app.client;
 
 import java.util.ArrayList;
 public class Funcionario {

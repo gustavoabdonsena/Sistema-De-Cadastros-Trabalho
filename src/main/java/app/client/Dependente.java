@@ -1,4 +1,4 @@
-package common.gen;
+package app.client;
 
 public class Dependente {
     String name;

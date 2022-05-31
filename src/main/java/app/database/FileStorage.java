@@ -1,4 +1,4 @@
-package common.database;
+package app.database;
 
 public class FileStorage {
 

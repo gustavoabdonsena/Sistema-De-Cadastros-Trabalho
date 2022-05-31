@@ -1,7 +1,7 @@
-package common;
+package app.controllers;
 
-import common.database.UsuariosList;
-import common.gen.Funcionario;
+import app.database.UsuariosList;
+import app.client.Funcionario;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 

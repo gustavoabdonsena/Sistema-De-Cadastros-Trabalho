@@ -1,6 +1,6 @@
-package common.database;
+package app.database;
 
-import common.gen.Funcionario;
+import app.client.Funcionario;
 
 import java.util.ArrayList;
 
