@@ -24,9 +24,11 @@ public class UsuariosList {
     //este método receberá os funcionários da lista
     public static boolean loadFuncionariosList(){
 
-
-
         return true;
+    }
+
+    public static boolean codeValidation(){
+        return false;
     }
 
 }
