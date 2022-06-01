@@ -15,10 +15,12 @@ import java.io.IOException;
 public class FileStorage {
 
     private static void createFile(){
+
         try{
             File database = new File("database.txt");
-            if(database.createNewFile()){
-              System.out.println("Arquivo criado");
+
+            if(database.createNewFile()) {
+                System.out.println("Arquivo criado");
             }
         }
         catch (IOException e){
@@ -74,7 +76,7 @@ public class FileStorage {
 
 
                     //gera a estrutura do arquivo TXT
-                    String str = "Codigo:" + functionary.getCode() + "{ "
+                    String str = functionary.getCode() + "{ "
                             + " nome: " + functionary.getName() + ","
                             + " cargo: " + functionary.getCargo() + ","
                             + " salario: " + functionary.getSalary() + ","
