@@ -128,6 +128,18 @@ public class Funcionario {
         return dependentes;
     }
 
+    //Adicionar dependente do funcionário
+    public void addDependente(String name, String nameFuncionario)
+    {
+        Dependente dependente = new Dependente(name, nameFuncionario);
+        dependentesList.add(dependente);
+    }
+
+    public ArrayList<Dependente> getDependentesList()
+    {
+        return dependentesList;
+    }
+
     public void calcBonus(double bonus)
     {
         this.bonus = 1 + 0.02 * this.dependentes;
