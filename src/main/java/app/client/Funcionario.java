@@ -1,24 +1,35 @@
 package app.client;
 
+import app.database.UsuariosList;
+
 import java.util.ArrayList;
 public class Funcionario {
 
-    String name;
-    String code;
-    String cargo;
-    int dependentes;
-    double salary;
-    double bonus;
+    private String name;
+    private String code;
+    private ArrayList<String> codigos = new ArrayList<String>();
+    private String cargo;
+    private int dependentes;
+    private double salary;
+    private double bonus;
 
     //lista de dependentes para o funcionário
-    ArrayList<Dependente> dependentesList = new ArrayList<>();
+    private ArrayList<Dependente> dependentesList = new ArrayList<>();
 
     public Funcionario(String name, String code, String cargo, int dependentes, double salary) {
         this.name = name;
         this.cargo = cargo;
 
         //setando codigo + verificação
+        for (int i = 0; i < codigos.size(); i++)
+        {
+            if (code == codigos.get(i))
+            {
+                throw new IllegalArgumentException("Código já existente");
+            }
+        }
         this.code = code;
+        codigos.add(code);
 
         //setando dependentes
         if(dependentes >= 0)
@@ -41,27 +52,36 @@ public class Funcionario {
         calcBonus(dependentes);
     }
 
-    public Funcionario(){
+    public Funcionario() {
 
     }
 
-    public String getName() {
+    public String getName()
+    {
         return name;
     }
 
-    public void setName(String name) {
+    public void setName(String name)
+    {
         this.name = name;
     }
 
-    public String getCode() {
+    public String getCode()
+    {
         return code;
     }
-    //codigo deve ser único, implementar verificação
-    public void setCode(String code) {
-        if(code != code){
 
+    //codigo deve ser único, implementar verificação
+    public void setCode(String code)
+    {
+        for (int i = 0; i < codigos.size(); i++)
+        {
+            if (code == codigos.get(i)) {
+                throw new IllegalArgumentException("Código já existente");
+            }
         }
         this.code = code;
+        codigos.add(code);
     }
 
     public String getCargo() {
@@ -103,15 +123,18 @@ public class Funcionario {
 
     }
 
-    public int getDependentes() {
+    public int getDependentes()
+    {
         return dependentes;
     }
 
-    public void calcBonus(double bonus) {
+    public void calcBonus(double bonus)
+    {
         this.bonus = 1 + 0.02 * this.dependentes;
     }
 
-    public double showBonus(){
+    public double showBonus()
+    {
         return this.bonus;
     }
 
