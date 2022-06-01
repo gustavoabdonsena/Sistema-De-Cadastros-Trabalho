@@ -17,18 +17,15 @@ public class UsuariosList {
 
     }
 
-    public static ArrayList<Funcionario> getFuncionarios() {
+    public static ArrayList<Funcionario> getFuncionarios()
+    {
         return funcionarios;
     }
 
     //este método receberá os funcionários da lista
-    public static boolean loadFuncionariosList(){
-
+    public static boolean loadFuncionariosList()
+    {
         return true;
-    }
-
-    public static boolean codeValidation(){
-        return false;
     }
 
 }

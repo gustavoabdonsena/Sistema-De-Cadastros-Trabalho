@@ -1,13 +1,12 @@
 package app.client;
 
-import app.database.UsuariosList;
+import app.database.Code;
 
 import java.util.ArrayList;
 public class Funcionario {
 
     private String name;
     private String code;
-    private ArrayList<String> codigos = new ArrayList<String>();
     private String cargo;
     private int dependentes;
     private double salary;
@@ -23,15 +22,14 @@ public class Funcionario {
         this.cargo = cargo;
 
         //setando codigo + verificação
-        for (int i = 0; i < codigos.size(); i++)
+        if(Code.codeValidation(code))
         {
-            if (code == codigos.get(i))
-            {
-                throw new IllegalArgumentException("Código já existente");
-            }
+            this.code = code;
         }
-        this.code = code;
-        codigos.add(code);
+        else
+        {
+            throw new IllegalArgumentException("Código já existente");
+        }
 
         //setando dependentes
         if(dependentes >= 0)
@@ -76,14 +74,7 @@ public class Funcionario {
     //codigo deve ser único, implementar verificação
     public void setCode(String code)
     {
-        for (int i = 0; i < codigos.size(); i++)
-        {
-            if (code == codigos.get(i)) {
-                throw new IllegalArgumentException("Código já existente");
-            }
-        }
         this.code = code;
-        codigos.add(code);
     }
 
     public String getCargo() {
@@ -130,6 +121,22 @@ public class Funcionario {
         return dependentes;
     }
 
+    public void setCodigo()
+    {
+        if(Code.codeValidation(code))
+        {
+            this.code = code;
+        }
+        else
+        {
+            throw new IllegalArgumentException("Código já existente");
+        }
+    }
+    public String getCodigo()
+    {
+        return code;
+    }
+
     public void calcBonus(double bonus)
     {
         this.bonus = 1 + 0.02 * this.dependentes;
@@ -138,14 +145,6 @@ public class Funcionario {
     public double showBonus()
     {
         return this.bonus;
-    }
-
-    public ArrayList<String> getCodigos() {
-        return codigos;
-    }
-
-    public void setCodigos(ArrayList<String> codigos) {
-        this.codigos = codigos;
     }
 
     public ArrayList<Dependente> getDependentesList() {
