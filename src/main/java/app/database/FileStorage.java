@@ -59,15 +59,9 @@ public class FileStorage {
 
                     dependentes.append('[');
 
-                    for (int i = 0; i < functionary.getDependentes().length;i++)
-                    {
-                        dependentes.append(functionary.getDependentes()[i]);
-
-                        if (i != (functionary.getQtdDependentes() - 1))
-                        {
-                            dependentes.append(",");
-                        }
-                    }
+                   functionary.getDependentesList().forEach(dependente -> {
+                       dependentes.append(dependente.getName());
+                   });
 
                     dependentes.append(']');
 

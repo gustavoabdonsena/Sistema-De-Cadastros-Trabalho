@@ -13,6 +13,8 @@ public class Funcionario {
     private double salary;
     private double bonus;
 
+    private int getQtdDependentes;
+
     //lista de dependentes para o funcionário
     private ArrayList<Dependente> dependentesList = new ArrayList<>();
 
@@ -138,4 +140,27 @@ public class Funcionario {
         return this.bonus;
     }
 
+    public ArrayList<String> getCodigos() {
+        return codigos;
+    }
+
+    public void setCodigos(ArrayList<String> codigos) {
+        this.codigos = codigos;
+    }
+
+    public ArrayList<Dependente> getDependentesList() {
+        return dependentesList;
+    }
+
+    public void setDependentesList(ArrayList<Dependente> dependentesList) {
+        this.dependentesList = dependentesList;
+    }
+
+    public int getGetQtdDependentes() {
+        return getQtdDependentes;
+    }
+
+    public void setGetQtdDependentes(int getQtdDependentes) {
+        this.getQtdDependentes = getQtdDependentes;
+    }
 }
