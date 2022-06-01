@@ -27,8 +27,8 @@ public class UsuariosList {
         return true;
     }
 
-    public static boolean codeValidation(){
-        return false;
+    public static void deleteArray(){
+        funcionarios.clear();
     }
 
 }
