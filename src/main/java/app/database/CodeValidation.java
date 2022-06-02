@@ -4,12 +4,12 @@ import app.client.Funcionario;
 
 import java.util.ArrayList;
 
-public class Code {
+public class CodeValidation {
 
     private String code;
     private static ArrayList<Funcionario> funcionarios = UsuariosList.getFuncionarios();
 
-    public Code(String code)
+    public CodeValidation(String code)
     {
         this.code = code;
     }

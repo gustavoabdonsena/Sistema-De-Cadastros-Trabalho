@@ -1,6 +1,6 @@
 package app.client;
 
-import app.database.Code;
+import app.database.CodeValidation;
 
 import java.util.ArrayList;
 public class Funcionario {
@@ -22,7 +22,7 @@ public class Funcionario {
         this.cargo = cargo;
 
         //setando codigo + verificação
-        if(Code.codeValidation(code))
+        if(CodeValidation.codeValidation(code))
         {
             this.code = code;
         }
@@ -123,7 +123,7 @@ public class Funcionario {
 
     public void setCodigo()
     {
-        if(Code.codeValidation(code))
+        if(CodeValidation.codeValidation(code))
         {
             this.code = code;
         }
