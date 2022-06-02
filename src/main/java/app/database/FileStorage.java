@@ -34,6 +34,14 @@ public class FileStorage {
         }
     }
 
+    private static void deleteFile(){
+
+        File database = new File("database.txt");
+
+        if(database.delete()) {
+            System.out.println("Arquivo criado");
+        }
+    }
     public static void loadList(){
 
 
@@ -44,9 +52,7 @@ public class FileStorage {
     }
 
     public static void saveList(){
-
         createFile();
-
         try {
 
             BufferedWriter writer = new BufferedWriter(new FileWriter("database.txt"));

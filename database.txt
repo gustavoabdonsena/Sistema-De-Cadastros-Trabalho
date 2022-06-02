@@ -1,0 +1,1 @@
+null{  nome: null, cargo: null, salario: 0.0, dependentes: [] }
