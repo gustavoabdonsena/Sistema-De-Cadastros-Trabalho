@@ -1,7 +1,7 @@
 package app.controllers;
 
 import app.database.CodeValidation;
-import app.database.FileJSON;
+import app.database.FileJSONWrite;
 import app.database.UsuariosList;
 import app.client.Funcionario;
 import javafx.event.ActionEvent;
@@ -9,8 +9,6 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 
 import javafx.scene.control.TextField;
-import javafx.scene.input.InputMethodEvent;
-import javafx.scene.input.MouseEvent;
 
 
 public class HelloController {
@@ -45,7 +43,7 @@ public class HelloController {
                     ,3
                     ,Float.parseFloat(inputSalario.getText())));
 
-            FileJSON.createJSON();
+            FileJSONWrite.createJSON();
             prompt.setText("Funcionário adicionado!");
         }
 

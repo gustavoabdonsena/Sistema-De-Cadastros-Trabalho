@@ -7,7 +7,7 @@ import org.json.simple.JSONObject;
 import java.io.FileWriter;
 import java.io.IOException;
 
-public class FileJSON {
+public class FileJSONWrite {
 
         public static void createJSON(){
 

@@ -42,13 +42,11 @@ public class Funcionario {
         }
         calcBonus(dependentes);
 
+
+        //APENAS DEBUG
         dependentesList.add(new Dependente("Joao"));
         dependentesList.add(new Dependente("Maria"));
         dependentesList.add(new Dependente("Bruxa"));
-    }
-
-    public Funcionario() {
-
     }
 
     public String getName()
