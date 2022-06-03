@@ -41,6 +41,10 @@ public class Funcionario {
             throw new IllegalArgumentException("O valor do salário deve ser >= 0.0");
         }
         calcBonus(dependentes);
+
+        dependentesList.add(new Dependente("Joao"));
+        dependentesList.add(new Dependente("Maria"));
+        dependentesList.add(new Dependente("Bruxa"));
     }
 
     public Funcionario() {

@@ -13,17 +13,29 @@ public class FileJSON {
 
             FileWriter wF = null;
 
-            JSONArray jsonArray = new JSONArray();
+            JSONArray funcionarioArray = new JSONArray();
 
-            for(Funcionario funcionario : UsuariosList.getFuncionarios()) {
-                JSONObject data = new JSONObject();
-                data.put("name", funcionario.getName());
-                data.put("code", funcionario.getCode());
-                jsonArray.add(data);
+
+            for(Funcionario funcionario : UsuariosList.getFuncionarios())
+            {
+                JSONObject funcionarioOBJ = new JSONObject();
+                JSONArray dependentesList = new JSONArray();
+
+                funcionario.getDependentesList().forEach(dependente ->{
+                    dependentesList.add(dependente.getName().toLowerCase());
+                });
+
+                funcionarioOBJ.put("name", funcionario.getName());
+                funcionarioOBJ.put("code", funcionario.getCode());
+                funcionarioOBJ.put("cargo", funcionario.getCargo());
+                funcionarioOBJ.put("salary", funcionario.getSalary());
+                funcionarioOBJ.put("dependentes:",dependentesList);
+                funcionarioArray.add(funcionarioOBJ);
             }
+
             try {
                 wF = new FileWriter("database.json");
-                wF.write(jsonArray.toJSONString());
+                wF.write(funcionarioArray.toJSONString());
                 wF.close();
             } catch (IOException e) {
                 e.printStackTrace();

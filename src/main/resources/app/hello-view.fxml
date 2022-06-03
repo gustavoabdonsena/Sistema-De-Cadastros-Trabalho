@@ -15,7 +15,7 @@
    <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="242.0" prefWidth="334.0">
       <children>
 
-          <Label fx:id="prompt" layoutX="99.0" layoutY="180.0" prefHeight="17.0" prefWidth="136.0" />
+          <Label fx:id="prompt" layoutX="102.0" layoutY="157.0" prefHeight="17.0" prefWidth="136.0" />
          <TextField fx:id="inputName" layoutX="96.0" layoutY="22.0" promptText="Name" />
          <TextField fx:id="inputCode" layoutX="96.0" layoutY="59.0" promptText="CODE" />
          <TextField fx:id="inputCargo" layoutX="96.0" layoutY="96.0" promptText="Cargo" />
@@ -25,6 +25,7 @@
                <Button mnemonicParsing="false" onAction="#createFuncionario" text="Sign In" />
             </items>
          </ToolBar>
+         <TextField fx:id="inputSalario" layoutX="96.0" layoutY="132.0" promptText="Salario" />
       </children>
    </Pane>
 

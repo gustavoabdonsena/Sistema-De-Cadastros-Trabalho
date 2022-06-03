@@ -25,6 +25,9 @@ public class HelloController {
     @FXML
     private TextField inputCargo;
 
+    @FXML
+    private TextField inputSalario;
+
 
 
 
@@ -35,7 +38,12 @@ public class HelloController {
         if(CodeValidation.validate(inputCode.getText())){
             prompt.setText("Funcionário Já Existe!");
         }else {
-            UsuariosList.createFuncionario(new Funcionario(inputName.getText(), inputCode.getText(),inputCargo.getText(),3,10000));
+            UsuariosList.createFuncionario(new Funcionario(
+                    inputName.getText()
+                    ,inputCode.getText()
+                    ,inputCargo.getText()
+                    ,3
+                    ,Float.parseFloat(inputSalario.getText())));
 
             FileJSON.createJSON();
             prompt.setText("Funcionário adicionado!");
