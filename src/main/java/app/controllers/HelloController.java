@@ -1,6 +1,7 @@
 package app.controllers;
 
 import app.database.CodeValidation;
+import app.database.FileJSONRead;
 import app.database.FileJSONWrite;
 import app.database.UsuariosList;
 import app.client.Funcionario;
@@ -55,6 +56,7 @@ public class HelloController {
     void loginFuncionario(ActionEvent event) {
         System.out.println("Entrou ");
 
+        FileJSONRead.loadJSON();
     }
 
 

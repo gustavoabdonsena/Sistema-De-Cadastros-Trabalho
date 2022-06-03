@@ -4,29 +4,33 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
-<?import javafx.scene.control.ToolBar?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
-<VBox alignment="CENTER" prefHeight="350.0" prefWidth="450.0" spacing="20.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.controllers.HelloController">
-    <padding>
-        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
-    </padding>
-   <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="242.0" prefWidth="334.0">
-      <children>
 
-          <Label fx:id="prompt" layoutX="102.0" layoutY="157.0" prefHeight="17.0" prefWidth="136.0" />
-         <TextField fx:id="inputName" layoutX="96.0" layoutY="22.0" promptText="Name" />
-         <TextField fx:id="inputCode" layoutX="96.0" layoutY="59.0" promptText="CODE" />
-         <TextField fx:id="inputCargo" layoutX="96.0" layoutY="96.0" promptText="Cargo" />
-         <ToolBar layoutX="70.0" layoutY="188.0" prefHeight="40.0" prefWidth="200.0">
-            <items>
-               <Button mnemonicParsing="false" onAction="#loginFuncionario" text="Login In" />
-               <Button mnemonicParsing="false" onAction="#createFuncionario" text="Sign In" />
-            </items>
-         </ToolBar>
-         <TextField fx:id="inputSalario" layoutX="96.0" layoutY="132.0" promptText="Salario" />
-      </children>
-   </Pane>
-
-</VBox>
+<Pane xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.controllers.HelloController">
+   <children>
+      <VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="350.0" prefWidth="450.0" spacing="20.0">
+          <padding>
+              <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+          </padding>
+         <TextField fx:id="inputName" prefHeight="11.0" prefWidth="410.0" promptText="Name" />
+         <TextField fx:id="inputCode" promptText="CODE" />
+         <TextField fx:id="inputCargo" promptText="Cargo" />
+         <TextField fx:id="inputSalario" promptText="Salario" />
+         <Button alignment="CENTER" defaultButton="true" mnemonicParsing="false" onAction="#createFuncionario" prefHeight="39.0" prefWidth="131.0" text="Sign In" textAlignment="CENTER">
+            <font>
+               <Font name="Segoe UI Semibold" size="14.0" />
+            </font>
+         </Button>
+         <Button alignment="CENTER" mnemonicParsing="false" onAction="#loginFuncionario" prefHeight="39.0" prefWidth="127.0" text="Login In">
+            <font>
+               <Font name="Segoe UI Semibold" size="14.0" />
+            </font>
+         </Button>
+         <Label fx:id="prompt" alignment="CENTER" contentDisplay="CENTER" prefHeight="17.0" prefWidth="622.0" textAlignment="CENTER" />
+      
+                        </VBox>
+   </children>
+</Pane>

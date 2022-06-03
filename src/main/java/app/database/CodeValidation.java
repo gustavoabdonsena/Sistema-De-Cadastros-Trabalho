@@ -2,12 +2,11 @@ package app.database;
 
 import app.client.Funcionario;
 
-import java.util.ArrayList;
 import java.util.concurrent.atomic.AtomicBoolean;
 
 public class CodeValidation {
 
-    public static boolean isFuncionarioExists(Funcionario funcionarios)
+    public static boolean validate(Funcionario funcionarios)
     {
         AtomicBoolean isExist = new AtomicBoolean(false);
 

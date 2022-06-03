@@ -41,5 +41,4 @@ public class FileJSONWrite {
                 e.printStackTrace();
             }
         }
-
 }
