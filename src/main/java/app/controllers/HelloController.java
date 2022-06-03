@@ -1,28 +1,56 @@
 package app.controllers;
 
+import app.database.CodeValidation;
 import app.database.FileJSON;
 import app.database.UsuariosList;
 import app.client.Funcionario;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 
-import org.json.simple.JSONObject;
+import javafx.scene.control.TextField;
+import javafx.scene.input.InputMethodEvent;
+import javafx.scene.input.MouseEvent;
+
 
 public class HelloController {
     @FXML
-    private Label welcomeText;
+    private Label prompt;
+    @FXML
+    private TextField inputName;
 
     @FXML
-    protected void createFuncionario() {
-        UsuariosList.addFuncionario(new Funcionario("Joao","XBCE","Gerente",3,7000));
-        //UsuariosList.addFuncionario(new Funcionario("Jorge","XBCE","Estagiário",3,5));
-        UsuariosList.addFuncionario(new Funcionario("Pedro","ABCDE","Vendedor",3,1200));
-        UsuariosList.addFuncionario(new Funcionario("ALBERTO","XYZ","Vendedor",3,1200));
+    private TextField inputCode;
 
-        FileJSON.createJSON();
-        welcomeText.setText("Funcionário adicionado!");
-        UsuariosList.deleteArray();
+    @FXML
+    private TextField inputCargo;
+
+
+
+
+    @FXML
+    void createFuncionario(ActionEvent event)
+    {
+
+        if(CodeValidation.validate(inputCode.getText())){
+            prompt.setText("Funcionário Já Existe!");
+        }else {
+            UsuariosList.createFuncionario(new Funcionario(inputName.getText(), inputCode.getText(),inputCargo.getText(),3,10000));
+
+            FileJSON.createJSON();
+            prompt.setText("Funcionário adicionado!");
+        }
+
+
+
     }
+
+    @FXML
+    void loginFuncionario(ActionEvent event) {
+        System.out.println("Entrou ");
+
+    }
+
 
 
 }

@@ -3,26 +3,35 @@ package app.database;
 import app.client.Funcionario;
 
 import java.util.ArrayList;
+import java.util.concurrent.atomic.AtomicBoolean;
 
 public class CodeValidation {
 
-    private String code;
-    private static ArrayList<Funcionario> funcionarios = UsuariosList.getFuncionarios();
-
-    public CodeValidation(String code)
+    public static boolean isFuncionarioExists(Funcionario funcionarios)
     {
-        this.code = code;
-    }
+        AtomicBoolean isExist = new AtomicBoolean(false);
 
-    public static boolean codeValidation(String code)
-    {
-        for (int i = 0; i < funcionarios.size(); i++)
-        {
-            if (funcionarios.get(i).getCode() == code)
-            {
-                return false;
+        UsuariosList.funcionarios.forEach(funcionario -> {
+            if(funcionario.getCode().equalsIgnoreCase(funcionarios.getCode())){
+                isExist.set(true);
             }
-        }
-        return true;
+        });
+
+        return isExist.get();
     }
+
+    public static boolean validate(String code){
+
+        AtomicBoolean isExist = new AtomicBoolean(false);
+
+        UsuariosList.funcionarios.forEach(funcionario -> {
+            if(funcionario.getCode().equalsIgnoreCase(code)){
+                isExist.set(true);
+            }
+        });
+
+        return isExist.get();
+
+    }
+
 }

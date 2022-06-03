@@ -20,16 +20,7 @@ public class Funcionario {
     public Funcionario(String name, String code, String cargo, int dependentes, double salary) {
         this.name = name;
         this.cargo = cargo;
-
-        //setando codigo + verificação
-        if(CodeValidation.codeValidation(code))
-        {
-            this.code = code;
-        }
-        else
-        {
-            throw new IllegalArgumentException("Código já existente");
-        }
+        this.code = code;
 
         //setando dependentes
         if(dependentes >= 0)
@@ -123,7 +114,7 @@ public class Funcionario {
 
     public void setCodigo()
     {
-        if(CodeValidation.codeValidation(code))
+        if(CodeValidation.validate(code))
         {
             this.code = code;
         }

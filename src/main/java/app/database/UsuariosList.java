@@ -8,7 +8,7 @@ import java.util.concurrent.atomic.AtomicBoolean;
 public class UsuariosList {
 
     public static ArrayList<Funcionario> funcionarios = new ArrayList<>();
-    
+
     public static ArrayList<Funcionario> getFuncionarios() {
         return funcionarios;
     }
@@ -20,21 +20,14 @@ public class UsuariosList {
 
     }
 
-
-
     //este método receberá os funcionários da lista
-    public static boolean createFuncionario(Funcionario f){
-
-        AtomicBoolean isExist = new AtomicBoolean(false);
-
-        funcionarios.forEach(funcionario -> {
-            if(funcionario.getCode().equalsIgnoreCase(f.getCode())){
-                isExist.set(true);
-                addFuncionario(f);
-            }
-        });
-
-        return isExist.get();
+    public static void createFuncionario(Funcionario funcionario) {
+        if(CodeValidation.isFuncionarioExists(funcionario)){
+            System.out.println("Colocar Warning de nao pode criar");
+        }else {
+            System.out.println("Funcionário criado com sucesso");
+            addFuncionario(funcionario);
+        }
     }
 
     public static void deleteArray(){
