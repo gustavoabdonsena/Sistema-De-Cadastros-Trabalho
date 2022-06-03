@@ -1,3 +1,0 @@
-XBCE{  nome: Joao, cargo: Gerente, salario: 7000.0, dependentes: [] }
-XBCE{  nome: Jorge, cargo: Estagiário, salario: 5.0, dependentes: [] }
-ABCDE{  nome: Pedro, cargo: Vendedor, salario: 1200.0, dependentes: [] }
