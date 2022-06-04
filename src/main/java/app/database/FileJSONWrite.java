@@ -21,8 +21,10 @@ public class FileJSONWrite {
                 JSONObject funcionarioOBJ = new JSONObject();
                 JSONArray dependentesList = new JSONArray();
 
+                //Percorre o array de dependentes e guarda em um JSONArray
                 funcionario.getDependentesList().forEach(dependente ->{dependentesList.add(dependente.getName().toLowerCase());});
 
+                //Cria os atributos do JSONObject
                 funcionarioOBJ.put("name", funcionario.getName());
                 funcionarioOBJ.put("code", funcionario.getCode());
                 funcionarioOBJ.put("cargo", funcionario.getCargo());
@@ -32,6 +34,7 @@ public class FileJSONWrite {
             }
 
             try {
+                //Método para criação e escrita do arquivo .json
                 wF = new FileWriter("database.json");
                 wF.write(funcionarioArray.toJSONString());
                 wF.close();

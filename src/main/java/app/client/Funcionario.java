@@ -11,8 +11,7 @@ public class Funcionario {
     private int dependentes;
     private double salary;
     private double bonus;
-
-    private int getQtdDependentes;
+    private int qtdDependentes;
 
     //lista de dependentes para o funcionário
     private ArrayList<Dependente> dependentesList = new ArrayList<>();
@@ -49,6 +48,7 @@ public class Funcionario {
         dependentesList.add(new Dependente("Bruxa"));
     }
 
+    //Construtor responsavel por receber um array de dependentes e chamar outro construtor para terminar a contrução
     public Funcionario(String name,String code,String cargo,ArrayList<Dependente> dependentes,double salary){
         this(name,code,cargo,dependentes.size(),salary);
         this.dependentesList = dependentes;
@@ -153,11 +153,11 @@ public class Funcionario {
         this.dependentesList = dependentesList;
     }
 
-    public int getGetQtdDependentes() {
-        return getQtdDependentes;
+    public int getQtdDependentes() {
+        return qtdDependentes;
     }
 
-    public void setGetQtdDependentes(int getQtdDependentes) {
-        this.getQtdDependentes = getQtdDependentes;
+    public void setQtdDependentes(int qtdDependentes) {
+        this.qtdDependentes = qtdDependentes;
     }
 }
