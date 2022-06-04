@@ -1,5 +1,6 @@
 package app.controllers;
 
+import app.Main;
 import app.database.CodeValidation;
 import app.database.FileJSONRead;
 import app.database.FileJSONWrite;
@@ -7,9 +8,13 @@ import app.database.UsuariosList;
 import app.client.Funcionario;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Scene;
 import javafx.scene.control.Label;
 
 import javafx.scene.control.TextField;
+import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 
 
 public class HelloController {
@@ -63,6 +68,8 @@ public class HelloController {
         }
 
     }
+
+
 
 
 
