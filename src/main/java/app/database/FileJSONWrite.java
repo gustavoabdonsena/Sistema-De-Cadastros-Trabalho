@@ -21,9 +21,7 @@ public class FileJSONWrite {
                 JSONObject funcionarioOBJ = new JSONObject();
                 JSONArray dependentesList = new JSONArray();
 
-                funcionario.getDependentesList().forEach(dependente ->{
-                    dependentesList.add(dependente.getName().toLowerCase());
-                });
+                funcionario.getDependentesList().forEach(dependente ->{dependentesList.add(dependente.getName().toLowerCase());});
 
                 funcionarioOBJ.put("name", funcionario.getName());
                 funcionarioOBJ.put("code", funcionario.getCode());

@@ -9,9 +9,6 @@ import org.json.simple.parser.ParseException;
 
 import java.io.*;
 import java.util.ArrayList;
-import java.util.List;
-import java.util.function.IntFunction;
-
 
 public class FileJSONRead {
 
@@ -52,7 +49,7 @@ public class FileJSONRead {
 
         jsonArray.forEach(obj -> {dependentes.add(new Dependente(obj.toString()));});
 
-        Funcionario funcionario = new Funcionario(name,code,cargo,dependentes,salario);
+        UsuariosList.addFuncionario(new Funcionario(name,code,cargo,dependentes,salario));
 
     }
 

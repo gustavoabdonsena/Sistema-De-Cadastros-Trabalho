@@ -54,9 +54,14 @@ public class HelloController {
 
     @FXML
     void loginFuncionario(ActionEvent event) {
-        System.out.println("Entrou ");
 
         FileJSONRead.loadJSON();
+        if(CodeValidation.validate(inputCode.getText())){
+            prompt.setText("ESSA PARTE ENTRA NA TELA DO FUNCIONÁRIO");
+        }else{
+            prompt.setText("Usuário não encontrado!");
+        }
+
     }
 
 

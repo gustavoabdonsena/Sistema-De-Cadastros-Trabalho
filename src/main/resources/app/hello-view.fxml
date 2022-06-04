@@ -8,7 +8,6 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-
 <Pane xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.controllers.HelloController">
    <children>
       <VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="350.0" prefWidth="450.0" spacing="20.0">
@@ -19,12 +18,12 @@
          <TextField fx:id="inputCode" promptText="CODE" />
          <TextField fx:id="inputCargo" promptText="Cargo" />
          <TextField fx:id="inputSalario" promptText="Salario" />
-         <Button alignment="CENTER" defaultButton="true" mnemonicParsing="false" onAction="#createFuncionario" prefHeight="39.0" prefWidth="131.0" text="Sign In" textAlignment="CENTER">
+         <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#loginFuncionario" prefHeight="39.0" prefWidth="127.0" text="Login In" textFill="#682dc2">
             <font>
                <Font name="Segoe UI Semibold" size="14.0" />
             </font>
          </Button>
-         <Button alignment="CENTER" mnemonicParsing="false" onAction="#loginFuncionario" prefHeight="39.0" prefWidth="127.0" text="Login In">
+         <Button alignment="CENTER" defaultButton="true" mnemonicParsing="false" onAction="#createFuncionario" prefHeight="39.0" prefWidth="131.0" text="Sign In" textAlignment="CENTER">
             <font>
                <Font name="Segoe UI Semibold" size="14.0" />
             </font>
