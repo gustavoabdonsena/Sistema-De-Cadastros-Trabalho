@@ -20,6 +20,7 @@ public class FileJSONRead {
 
         try (FileReader reader = new FileReader("database.json")) {
             // Read JSON file
+
             Object obj = jsonParser.parse(reader);
 
             JSONArray userList = (JSONArray) obj;

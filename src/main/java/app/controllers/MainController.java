@@ -12,7 +12,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 
 
-public class HelloController {
+public class MainController {
     @FXML
     private Label prompt;
     @FXML
