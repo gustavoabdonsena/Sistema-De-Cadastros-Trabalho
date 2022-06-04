@@ -29,7 +29,7 @@ public class FileJSONWrite {
                 funcionarioOBJ.put("code", funcionario.getCode());
                 funcionarioOBJ.put("cargo", funcionario.getCargo());
                 funcionarioOBJ.put("salary", funcionario.getSalary());
-                funcionarioOBJ.put("dependentes:",dependentesList);
+                funcionarioOBJ.put("dependentes",dependentesList);
                 funcionarioArray.add(funcionarioOBJ);
             }
 

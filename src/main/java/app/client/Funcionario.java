@@ -49,9 +49,10 @@ public class Funcionario {
         dependentesList.add(new Dependente("Bruxa"));
     }
 
-    /*public Funcionario(String name,String code,String cargo,ArrayList<Dependente> dependentes,double salary){
+    public Funcionario(String name,String code,String cargo,ArrayList<Dependente> dependentes,double salary){
         this(name,code,cargo,dependentes.size(),salary);
-    }*/
+        this.dependentesList = dependentes;
+    }
 
     public String getName()
     {

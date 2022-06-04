@@ -1,5 +1,7 @@
 package app.database;
 
+import app.client.Dependente;
+import app.client.Funcionario;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
@@ -7,6 +9,7 @@ import org.json.simple.parser.ParseException;
 
 import java.io.*;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.function.IntFunction;
 
 
@@ -38,16 +41,18 @@ public class FileJSONRead {
 
     private static void parseUserObject(JSONObject jsonObject) {
 
-        ArrayList<String> dependentes = new ArrayList<>();
+        ArrayList<Dependente> dependentes = new ArrayList<>();
         String name = (String) jsonObject.get("name");
         String code = (String) jsonObject.get("code");
         String cargo = (String) jsonObject.get("cargo");
         double salario = (double) jsonObject.get("salary");
 
-        JSONArray jsonArray = (JSONArray) jsonObject.get("dependentes");
+        JSONArray jsonArray = new JSONArray();
+        jsonArray = (JSONArray) jsonObject.get("dependentes");
 
+        jsonArray.forEach(obj -> {dependentes.add(new Dependente(obj.toString()));});
 
-        // Funcionario funcionario = new Funcionario(name,code,cargo,dependentes,salario);
+        Funcionario funcionario = new Funcionario(name,code,cargo,dependentes,salario);
 
     }
 
