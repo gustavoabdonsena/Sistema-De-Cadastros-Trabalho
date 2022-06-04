@@ -57,7 +57,7 @@ public class HelloController {
 
         FileJSONRead.loadJSON();
         if(CodeValidation.validate(inputCode.getText())){
-            prompt.setText("ESSA PARTE ENTRA NA TELA DO FUNCIONÁRIO");
+            prompt.setText("Entrada bem Sucedida (Colocar tela para excluir dependentes)");
         }else{
             prompt.setText("Usuário não encontrado!");
         }

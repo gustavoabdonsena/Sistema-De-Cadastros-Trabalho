@@ -5,6 +5,7 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 
 import java.io.IOException;
 
@@ -15,8 +16,9 @@ public class Main extends Application {
 
 
         FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("hello-view.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 450, 350);
-        stage.setTitle("Main");
+        Scene scene = new Scene(fxmlLoader.load(), 800 , 450);
+        stage.initStyle(StageStyle.UTILITY);
+        stage.setTitle("Sistemas de Funcionários");
         stage.setScene(scene);
         stage.show();
     }
