@@ -1,5 +1,6 @@
 package app.controllers;
 
+import app.Main;
 import app.client.Funcionario;
 import app.database.CodeValidation;
 import app.database.FileJSONRead;
@@ -7,9 +8,16 @@ import app.database.FileJSONWrite;
 import app.database.UsuariosList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Scene;
+import javafx.stage.Stage;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.stage.StageStyle;
+
+import java.io.IOException;
 
 
 public class MainController {
@@ -27,9 +35,38 @@ public class MainController {
     @FXML
     private TextField inputSalario;
 
+    private Stage stage;
+    private Scene scene;
 
+    @FXML
+    void signIn(ActionEvent event) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("sign-in.fxml"));
+        Scene scene = new Scene(fxmlLoader.load(), 800 , 450);
+        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        stage.setTitle("Sistemas de Funcionários");
+        stage.setScene(scene);
+        stage.show();
+    }
 
+    @FXML
+    void logIn(ActionEvent event) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("log-in.fxml"));
+        Scene scene = new Scene(fxmlLoader.load(), 800 , 450);
+        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        stage.setTitle("Sistemas de Funcionários");
+        stage.setScene(scene);
+        stage.show();
+    }
 
+    @FXML
+    void backToFirst(ActionEvent event) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("first-scene.fxml"));
+        Scene scene = new Scene(fxmlLoader.load(), 800 , 450);
+        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        stage.setTitle("Sistemas de Funcionários");
+        stage.setScene(scene);
+        stage.show();
+    }
     @FXML
     void createFuncionario(ActionEvent event)
     {
@@ -69,9 +106,5 @@ public class MainController {
         }
 
     }
-
-
-
-
 
 }
