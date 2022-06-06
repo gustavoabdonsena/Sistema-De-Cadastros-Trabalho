@@ -41,7 +41,7 @@ public class MainController {
     @FXML
     void signIn(ActionEvent event) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("sign-in.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 800 , 450);
+        scene = new Scene(fxmlLoader.load(), 800 , 450);
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         stage.setTitle("Sistemas de Funcionários");
         stage.setScene(scene);
@@ -51,7 +51,7 @@ public class MainController {
     @FXML
     void logIn(ActionEvent event) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("log-in.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 800 , 450);
+        scene = new Scene(fxmlLoader.load(), 800 , 450);
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         stage.setTitle("Sistemas de Funcionários");
         stage.setScene(scene);
@@ -61,16 +61,16 @@ public class MainController {
     @FXML
     void backToFirst(ActionEvent event) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("first-scene.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 800 , 450);
+        scene = new Scene(fxmlLoader.load(), 800 , 450);
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         stage.setTitle("Sistemas de Funcionários");
         stage.setScene(scene);
         stage.show();
     }
-    @FXML
-    void createFuncionario(ActionEvent event)
-    {
 
+    @FXML
+    void createFuncionario(ActionEvent event) throws IOException
+    {
         try{
             if(CodeValidation.validate(inputCode.getText())){
                 prompt.setText("Funcionário Já Existe!");
@@ -85,6 +85,14 @@ public class MainController {
 
                 FileJSONWrite.createJSON();
                 prompt.setText("Funcionário adicionado!");
+
+                //Switch to employee's info page
+                FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("funcionarios.fxml"));
+                scene = new Scene(fxmlLoader.load(), 800 , 450);
+                stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+                stage.setTitle("Sistemas de Funcionários");
+                stage.setScene(scene);
+                stage.show();
             }
         } catch (NumberFormatException e){
             Alert alert  = new Alert(Alert.AlertType.ERROR);
@@ -92,7 +100,6 @@ public class MainController {
                 alert.show();
 
         }
-
     }
 
     @FXML
