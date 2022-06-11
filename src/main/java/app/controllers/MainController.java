@@ -94,16 +94,15 @@ public class MainController {
                 stage.setScene(scene);
                 stage.show();
             }
-        } catch (NumberFormatException e){
-            Alert alert  = new Alert(Alert.AlertType.ERROR);
-                alert.setContentText(e.toString());
-                alert.show();
-
-        }
+        } catch (NumberFormatException e) {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setContentText(e.toString());
+            alert.show();
+            }
     }
 
     @FXML
-    void loginFuncionario(ActionEvent event) {
+    void loginFuncionario(ActionEvent event) throws IOException {
 
         FileJSONRead.loadJSON();
         if(CodeValidation.validate(inputCode.getText())){
@@ -112,6 +111,13 @@ public class MainController {
             prompt.setText("Usuário não encontrado!");
         }
 
-    }
+        //Switch to employee's info page
+        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("funcionarios.fxml"));
+        scene = new Scene(fxmlLoader.load(), 800 , 450);
+        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        stage.setTitle("Sistemas de Funcionários");
+        stage.setScene(scene);
+        stage.show();
 
+    }
 }
