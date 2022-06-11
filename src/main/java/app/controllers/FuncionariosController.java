@@ -35,6 +35,7 @@ public class FuncionariosController implements Initializable {
     @FXML
     TableColumn<Funcionario, Double> SalaryColumn;
 
+    //Erro: não está lendo o valor de Salary
     ObservableList<Funcionario> funcionario = FXCollections.observableArrayList(
             new Funcionario("FNCIONARIO", "A~BCDEF", "GErente", 10, 2000)
     );
