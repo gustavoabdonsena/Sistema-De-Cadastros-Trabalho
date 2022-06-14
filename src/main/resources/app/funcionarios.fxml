@@ -27,9 +27,9 @@
                   <Font name="Segoe UI Semibold" size="18.0" />
                </font>
             </TextField>
-            <TableView fx:id="FuncionariosInfo" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: transparent;">
+            <TableView fx:id="FuncionariosInfo" prefHeight="200.0" prefWidth="200.0">
               <columns>
-                <TableColumn fx:id="NameColumn" prefWidth="75.0" style="-fx-background-color: transparent;" text="Funcionário" />
+                <TableColumn fx:id="NameColumn" prefWidth="75.0" style="-fx-alignment: center;" text="Funcionário" />
                 <TableColumn fx:id="CodeColumn" prefWidth="75.0" text="Código" />
                   <TableColumn fx:id="CargoColumn" prefWidth="75.0" text="Cargo" />
                   <TableColumn fx:id="DependentesColumn" prefWidth="75.0" text="Dependentes" />

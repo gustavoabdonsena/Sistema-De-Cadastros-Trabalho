@@ -35,26 +35,29 @@ public class FuncionariosController implements Initializable {
     @FXML
     TableColumn<Funcionario, Double> SalaryColumn;
 
-    //Erro: não está lendo o valor de Salary
-    ObservableList<Funcionario> funcionario = FXCollections.observableArrayList(
-            new Funcionario("FNCIONARIO", "A~BCDEF", "GErente", 10, 2000)
-    );
+    ObservableList<Funcionario> funcionarios = FXCollections.observableArrayList();
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        NameColumn.setCellValueFactory(new PropertyValueFactory<>("Name"));
-        CodeColumn.setCellValueFactory(new PropertyValueFactory<>("Codigo"));
-        CargoColumn.setCellValueFactory(new PropertyValueFactory<>("Cargo"));
-        DependentesColumn.setCellValueFactory(new PropertyValueFactory<>("Dependentes"));
-        SalaryColumn.setCellValueFactory(new PropertyValueFactory<>("Salary"));
+        for (Funcionario funcionario : UsuariosList.getFuncionarios())
+        {
+            funcionarios.add(funcionario);
+        }
 
-        FuncionariosInfo.setItems(funcionario);
+        NameColumn.setCellValueFactory(new PropertyValueFactory<>("name"));
+        CodeColumn.setCellValueFactory(new PropertyValueFactory<>("code"));
+        CargoColumn.setCellValueFactory(new PropertyValueFactory<>("cargo"));
+        DependentesColumn.setCellValueFactory(new PropertyValueFactory<>("dependentes"));
+        SalaryColumn.setCellValueFactory(new PropertyValueFactory<>("salary"));
+
+        FuncionariosInfo.setItems(funcionarios);
     }
 
     @FXML
     void deleteFuncionario(ActionEvent event) {
         int selectedID = FuncionariosInfo.getSelectionModel().getSelectedIndex();
         FuncionariosInfo.getItems().remove(selectedID);
+        UsuariosList.deleteFuncionario(FuncionariosInfo.getItems().get(selectedID));
     }
 
     @FXML

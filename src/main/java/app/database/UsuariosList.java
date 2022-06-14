@@ -31,4 +31,9 @@ public class UsuariosList {
         }
     }
 
+    public static void deleteFuncionario(Funcionario funcionario)
+    {
+        funcionarios.remove(funcionario);
+    }
+
 }

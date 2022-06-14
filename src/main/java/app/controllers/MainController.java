@@ -34,6 +34,8 @@ public class MainController {
 
     @FXML
     private TextField inputSalario;
+    @FXML
+    private TextField inputQtdDependentes;
 
     private Stage stage;
     private Scene scene;
@@ -79,7 +81,7 @@ public class MainController {
                         inputName.getText()
                         ,inputCode.getText()
                         ,inputCargo.getText()
-                        ,3
+                        ,Integer.parseInt(inputQtdDependentes.getText())
                         ,Float.parseFloat(inputSalario.getText()
                 )));
 

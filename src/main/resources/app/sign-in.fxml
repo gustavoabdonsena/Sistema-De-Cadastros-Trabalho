@@ -28,6 +28,7 @@
             <TextField fx:id="inputCode" alignment="CENTER" promptText="CODE" />
             <TextField fx:id="inputCargo" alignment="CENTER" promptText="CARGO" />
             <TextField fx:id="inputSalario" alignment="CENTER" promptText="SALARIO" />
+            <TextField fx:id="inputQtdDependentes" alignment="CENTER" promptText="QUANTIDADE DE DEPENDENTES" />
             <Button alignment="CENTER" contentDisplay="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#createFuncionario" prefHeight="40.0" prefWidth="160.0" text="Sign In" textAlignment="CENTER" textFill="#5516c9" textOverrun="WORD_ELLIPSIS">
                <font>
                   <Font name="Segoe UI Semibold" size="16.0" />

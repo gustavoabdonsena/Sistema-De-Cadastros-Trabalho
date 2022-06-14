@@ -8,4 +8,5 @@ module com.example.av3final {
 
     //localização das classes de controllers
     opens app.controllers to javafx.fxml;
+    opens app.client to javafx.base;
 }
