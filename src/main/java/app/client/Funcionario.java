@@ -39,12 +39,6 @@ public class Funcionario {
             throw new IllegalArgumentException("O valor do salário deve ser >= 0.0");
         }
         setBonus(dependentes);
-
-
-        //APENAS DEBUG
-        dependentesList.add(new Dependente("Joao"));
-        dependentesList.add(new Dependente("Maria"));
-        dependentesList.add(new Dependente("Bruxa"));
     }
 
     //Construtor responsavel por receber um array de dependentes e chamar outro construtor para terminar a contrução
