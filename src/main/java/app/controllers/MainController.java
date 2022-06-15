@@ -145,13 +145,48 @@ public class MainController {
         stage.show();
     }*/
 
+    @FXML
+    void deleteFuncionario(ActionEvent event) throws IOException {
+        //Switch to "delete employee" page
+        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("delete.fxml"));
+        scene = new Scene(fxmlLoader.load(), 800 , 450);
+        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        stage.setTitle("Sistemas de Funcionários");
+        stage.setScene(scene);
+        stage.show();
+    }
+
+    @FXML
+    void removeFuncionario(ActionEvent event) throws IOException {
+        //Delete employee from database
+        if(CodeValidation.validate(inputCode.getText())){
+            for (Funcionario funcionario:UsuariosList.getFuncionarios())
+            {
+                if (funcionario.getCode() == inputCode.getText())
+                {
+                    UsuariosList.deleteFuncionario(funcionario);
+                }
+            }
+            FileJSONWrite.createJSON();
+            prompt.setText("Funcionário removido!");
+        }else{
+            prompt.setText("Funcionário Inexistente!");
+        }
+
+        //Switch to employee's info page
+        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("funcionarios.fxml"));
+        scene = new Scene(fxmlLoader.load(), 800 , 450);
+        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        stage.setTitle("Sistemas de Funcionários");
+        stage.setScene(scene);
+        stage.show();
+    }
 
     @FXML
     void loginFuncionario(ActionEvent event) throws IOException {
 
-        FileJSONRead.loadJSON();
         if(CodeValidation.validate(inputCode.getText())){
-            prompt.setText("Entrada bem Sucedida (Colocar tela para excluir dependentes)");
+            prompt.setText("Entrada bem Sucedida");
         }else{
             prompt.setText("Usuário não encontrado!");
         }
@@ -163,6 +198,5 @@ public class MainController {
         stage.setTitle("Sistemas de Funcionários");
         stage.setScene(scene);
         stage.show();
-
     }
 }

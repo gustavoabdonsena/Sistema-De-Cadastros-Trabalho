@@ -27,15 +27,11 @@ public class FuncionariosController implements Initializable {
     @FXML
     private TableColumn<Funcionario, String> NameColumn;
     @FXML
-    TableColumn<Funcionario, String> CodeColumn;
+    private TableColumn<Funcionario, Integer> DependentesColumn;
     @FXML
-    TableColumn<Funcionario,String> CargoColumn;
-    @FXML
-    TableColumn<Funcionario, Integer> DependentesColumn;
-    @FXML
-    TableColumn<Funcionario, Double> SalaryColumn;
+    private TableColumn<Funcionario, Double> BonusColumn;
 
-    ObservableList<Funcionario> funcionarios = FXCollections.observableArrayList();
+    private ObservableList<Funcionario> funcionarios = FXCollections.observableArrayList();
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -45,19 +41,21 @@ public class FuncionariosController implements Initializable {
         }
 
         NameColumn.setCellValueFactory(new PropertyValueFactory<>("name"));
-        CodeColumn.setCellValueFactory(new PropertyValueFactory<>("code"));
-        CargoColumn.setCellValueFactory(new PropertyValueFactory<>("cargo"));
         DependentesColumn.setCellValueFactory(new PropertyValueFactory<>("dependentes"));
-        SalaryColumn.setCellValueFactory(new PropertyValueFactory<>("salary"));
+        BonusColumn.setCellValueFactory(new PropertyValueFactory<>("bonus"));
 
         FuncionariosInfo.setItems(funcionarios);
     }
 
     @FXML
-    void deleteFuncionario(ActionEvent event) {
-        int selectedID = FuncionariosInfo.getSelectionModel().getSelectedIndex();
-        FuncionariosInfo.getItems().remove(selectedID);
-        UsuariosList.deleteFuncionario(FuncionariosInfo.getItems().get(selectedID));
+    void deleteFuncionario(ActionEvent event) throws IOException {
+        //Switch to "delete employee" page
+        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("delete.fxml"));
+        Scene scene = new Scene(fxmlLoader.load(), 800, 450);
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        stage.setTitle("Sistemas de Funcionários");
+        stage.setScene(scene);
+        stage.show();
     }
 
     @FXML
@@ -69,4 +67,15 @@ public class FuncionariosController implements Initializable {
         stage.setScene(scene);
         stage.show();
     }
+
+    @FXML
+    void backToFirst(ActionEvent event) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("first-scene.fxml"));
+        Scene scene = new Scene(fxmlLoader.load(), 800, 450);
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        stage.setTitle("Sistemas de Funcionários");
+        stage.setScene(scene);
+        stage.show();
+    }
+
 }

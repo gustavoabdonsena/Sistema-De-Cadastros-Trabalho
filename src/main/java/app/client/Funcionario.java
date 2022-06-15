@@ -24,7 +24,7 @@ public class Funcionario {
         if(dependentes >= 0)
         {
             this.dependentes = dependentes;
-            calcBonus(dependentes);
+            setBonus(dependentes);
         }
         else
         {
@@ -38,7 +38,7 @@ public class Funcionario {
         else {
             throw new IllegalArgumentException("O valor do salário deve ser >= 0.0");
         }
-        calcBonus(dependentes);
+        setBonus(dependentes);
 
 
         //APENAS DEBUG
@@ -71,7 +71,14 @@ public class Funcionario {
     //codigo deve ser único, implementar verificação
     public void setCode(String code)
     {
-        this.code = code;
+        if(CodeValidation.validate(code))
+        {
+            this.code = code;
+        }
+        else
+        {
+            throw new IllegalArgumentException("Código já existente");
+        }
     }
 
     public String getCargo() {
@@ -104,7 +111,7 @@ public class Funcionario {
         if(dependentes >= 0)
         {
             this.dependentes = dependentes;
-            calcBonus(dependentes);
+            setBonus(dependentes);
         }
         else
         {
@@ -118,28 +125,12 @@ public class Funcionario {
         return dependentes;
     }
 
-    public void setCodigo()
+    public void setBonus(int dependentes)
     {
-        if(CodeValidation.validate(code))
-        {
-            this.code = code;
-        }
-        else
-        {
-            throw new IllegalArgumentException("Código já existente");
-        }
-    }
-    public String getCodigo()
-    {
-        return code;
+        this.bonus = 2 * dependentes;
     }
 
-    public void calcBonus(double bonus)
-    {
-        this.bonus = 1 + 0.02 * this.dependentes;
-    }
-
-    public double showBonus()
+    public double getBonus()
     {
         return this.bonus;
     }
