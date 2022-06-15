@@ -1,6 +1,7 @@
 package app.controllers;
 
 import app.Main;
+import app.client.Dependente;
 import app.client.Funcionario;
 import app.database.CodeValidation;
 import app.database.FileJSONRead;
@@ -11,13 +12,15 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Scene;
+import javafx.scene.layout.VBox;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
-import javafx.stage.StageStyle;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 
 public class MainController {
@@ -82,15 +85,33 @@ public class MainController {
                         ,inputCode.getText()
                         ,inputCargo.getText()
                         ,Integer.parseInt(inputQtdDependentes.getText())
-                        ,Float.parseFloat(inputSalario.getText()
-                )));
+                        ,Float.parseFloat(inputSalario.getText())
+                ));
 
                 FileJSONWrite.createJSON();
                 prompt.setText("Funcionário adicionado!");
 
+                //Switch to "add dependents" page
+                /*FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("next-sign-in.fxml"));
+                scene = new Scene(fxmlLoader.load(), 800 , 450);
+                //Add text fields to input the dependents' names
+                VBox vbox = (VBox) scene.lookup("#vbox");
+                for (int i = 0; i < Integer.parseInt(inputQtdDependentes.getText()); i++)
+                {
+                    TextField dependentName = new TextField();
+                    dependentName.setId("#inputDependente" + i);
+                    dependentName.setPromptText("DEPENDENT NAME");
+                    vbox.getChildren().add(dependentName);
+                }*/
+
                 //Switch to employee's info page
                 FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("funcionarios.fxml"));
                 scene = new Scene(fxmlLoader.load(), 800 , 450);
+                stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+                stage.setTitle("Sistemas de Funcionários");
+                stage.setScene(scene);
+                stage.show();
+
                 stage = (Stage)((Node)event.getSource()).getScene().getWindow();
                 stage.setTitle("Sistemas de Funcionários");
                 stage.setScene(scene);
@@ -102,6 +123,28 @@ public class MainController {
             alert.show();
             }
     }
+
+    /*@FXML
+    void addDependentes(ActionEvent event) throws IOException
+    {
+        ArrayList<Dependente> dependentes = new ArrayList<>();
+        for (int i = 0; i < Integer.parseInt(inputQtdDependentes.getText()); i++)
+        {
+            TextField inputDependente = (TextField) scene.lookup("#inputDependente" + i);
+            Dependente dependente = new Dependente(inputDependente.getText());
+            dependentes.add(dependente);
+        }
+        UsuariosList.getFuncionarios().get(-1).setDependentesList(dependentes);
+
+        //Switch to employee's info page
+        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("funcionarios.fxml"));
+        scene = new Scene(fxmlLoader.load(), 800 , 450);
+        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        stage.setTitle("Sistemas de Funcionários");
+        stage.setScene(scene);
+        stage.show();
+    }*/
+
 
     @FXML
     void loginFuncionario(ActionEvent event) throws IOException {

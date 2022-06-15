@@ -11,7 +11,6 @@ public class Funcionario {
     private int dependentes;
     private double salary;
     private double bonus;
-    private int qtdDependentes;
 
     //lista de dependentes para o funcionário
     private ArrayList<Dependente> dependentesList = new ArrayList<>();
@@ -153,11 +152,4 @@ public class Funcionario {
         this.dependentesList = dependentesList;
     }
 
-    public int getQtdDependentes() {
-        return qtdDependentes;
-    }
-
-    public void setQtdDependentes(int qtdDependentes) {
-        this.qtdDependentes = qtdDependentes;
-    }
 }
