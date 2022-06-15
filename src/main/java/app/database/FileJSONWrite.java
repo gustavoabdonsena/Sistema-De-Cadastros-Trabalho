@@ -10,9 +10,7 @@ import java.io.IOException;
 public class FileJSONWrite {
 
         public static void createJSON(){
-
-            FileWriter wF = null;
-
+            
             JSONArray funcionarioArray = new JSONArray();
 
 
@@ -37,10 +35,11 @@ public class FileJSONWrite {
 
             try {
                 //Método para criação e escrita do arquivo .json
-                wF = new FileWriter("database.json");
+                FileWriter wF = new FileWriter("database.json");
                 wF.write(funcionarioArray.toJSONString());
                 wF.close();
-            } catch (IOException e) {
+            }
+            catch (IOException e) {
                 e.printStackTrace();
             }
         }
