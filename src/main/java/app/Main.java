@@ -1,6 +1,7 @@
 package app;
 
 import app.database.FileJSONRead;
+import app.database.FileJSONWrite;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -23,6 +24,7 @@ public class Main extends Application {
     }
 
     public static void main(String[] args) {
+        FileJSONWrite.createJSON();
         //Método de carregamento do banco de dados
         FileJSONRead.loadJSON();
         launch();

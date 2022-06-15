@@ -19,17 +19,19 @@ public class FileJSONWrite {
             for(Funcionario funcionario : UsuariosList.getFuncionarios())
             {
                 JSONObject funcionarioOBJ = new JSONObject();
-                JSONArray dependentesList = new JSONArray();
 
-                //Percorre o array de dependentes e guarda em um JSONArray
-                funcionario.getDependentesList().forEach(dependente ->{dependentesList.add(dependente.getName().toLowerCase());});
+             /*   //Percorre o array de dependentes e guarda em um JSONArray
+                funcionario.getDependentesList().forEach(dependente ->{
+                    dependentesList.add(dependente.getName().toLowerCase());
+                });*/
 
                 //Cria os atributos do JSONObject
                 funcionarioOBJ.put("name", funcionario.getName());
                 funcionarioOBJ.put("code", funcionario.getCode());
                 funcionarioOBJ.put("cargo", funcionario.getCargo());
                 funcionarioOBJ.put("salary", funcionario.getSalary());
-                funcionarioOBJ.put("dependentes",dependentesList);
+                funcionarioOBJ.put("dependentes", funcionario.getDependentesList());
+
                 funcionarioArray.add(funcionarioOBJ);
             }
 
