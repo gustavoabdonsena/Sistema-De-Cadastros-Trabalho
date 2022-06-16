@@ -32,7 +32,7 @@
                   <Cursor fx:constant="CROSSHAIR" />
                </cursor>
             </Button>
-            <Button alignment="CENTER" contentDisplay="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#deleteFuncionario" prefHeight="39.0" prefWidth="161.0" text="Delete Employee" textAlignment="CENTER" textFill="#5516c9" textOverrun="WORD_ELLIPSIS">
+            <Button alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#deleteFuncionario" prefHeight="40.0" prefWidth="160.0" text="Delete Employee" textAlignment="CENTER" textFill="#5516c9" textOverrun="WORD_ELLIPSIS">
                <font>
                   <Font name="Segoe UI Semibold" size="16.0" />
                </font>

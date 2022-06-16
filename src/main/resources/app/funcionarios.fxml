@@ -30,14 +30,16 @@
             <TableView fx:id="FuncionariosInfo" prefHeight="200.0" prefWidth="200.0">
               <columns>
                 <TableColumn fx:id="NameColumn" prefWidth="75.0" style="-fx-alignment: center;" text="Funcionário" />
-                  <TableColumn fx:id="DependentesColumn" prefWidth="75.0" style="-fx-alignment: center;" text="Dependentes" />
-                  <TableColumn fx:id="BonusColumn" prefWidth="75.0" style="-fx-alignment: center;" text="Bônus (%)" />
+                <TableColumn fx:id="CodeColumn" prefWidth="75.0" text="Código" />
+                  <TableColumn fx:id="CargoColumn" prefWidth="75.0" text="Cargo" />
+                  <TableColumn fx:id="DependentesColumn" prefWidth="75.0" text="Dependentes" />
+                  <TableColumn fx:id="SalaryColumn" prefWidth="75.0" text="Salário" />
               </columns>
                <columnResizePolicy>
                   <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
                </columnResizePolicy>
             </TableView>
-            <Button alignment="CENTER" contentDisplay="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#deleteFuncionario" prefHeight="39.0" prefWidth="153.0" text="Delete Employee" textAlignment="CENTER" textFill="#5516c9" textOverrun="WORD_ELLIPSIS">
+            <Button alignment="CENTER" contentDisplay="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#deleteFuncionario" prefHeight="39.0" prefWidth="134.0" text="Delete" textAlignment="CENTER" textFill="#5516c9" textOverrun="WORD_ELLIPSIS">
                <font>
                   <Font name="Segoe UI Semibold" size="16.0" />
                </font>
@@ -63,13 +65,5 @@
             <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
          </padding>
       </VBox>
-      <Button alignment="CENTER" contentDisplay="CENTER" layoutX="24.0" layoutY="24.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#backToFirst" prefHeight="40.0" prefWidth="82.0" text="Back" textAlignment="CENTER" textFill="#5516c9" textOverrun="WORD_ELLIPSIS">
-         <font>
-            <Font name="Segoe UI Semibold" size="16.0" />
-         </font>
-         <cursor>
-            <Cursor fx:constant="CROSSHAIR" />
-         </cursor>
-      </Button>
    </children>
 </Pane>
