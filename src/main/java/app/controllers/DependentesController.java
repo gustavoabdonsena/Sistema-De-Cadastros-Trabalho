@@ -41,8 +41,9 @@ public class DependentesController {
 
     @FXML
     void addDependente(ActionEvent event) {
+        int index = UsuariosList.getFuncionarios().size() - 1;
 
-        if (dependentes.size() == UsuariosList.getFuncionarios().get(-1).getDependentes())
+        if (dependentes.size() == UsuariosList.getFuncionarios().get(index).getDependentes())
         {
             add.setDisable(true);
         }
