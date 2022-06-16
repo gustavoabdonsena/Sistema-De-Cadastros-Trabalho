@@ -35,10 +35,7 @@ public class FuncionariosController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        for (Funcionario funcionario : UsuariosList.getFuncionarios())
-        {
-            funcionarios.add(funcionario);
-        }
+        funcionarios.addAll(UsuariosList.getFuncionarios());
 
         NameColumn.setCellValueFactory(new PropertyValueFactory<>("name"));
         DependentesColumn.setCellValueFactory(new PropertyValueFactory<>("dependentes"));

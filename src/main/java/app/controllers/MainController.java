@@ -112,11 +112,6 @@ public class MainController {
                 stage.setTitle("Sistemas de Funcionários");
                 stage.setScene(scene);
                 stage.show();
-
-                stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-                stage.setTitle("Sistemas de Funcionários");
-                stage.setScene(scene);
-                stage.show();
             }
         } catch (NumberFormatException e) {
             Alert alert = new Alert(Alert.AlertType.ERROR);
@@ -168,20 +163,22 @@ public class MainController {
                 {
                     UsuariosList.funcionarios.remove(funcionario);
                     FileJSONWrite.createJSON();
+                    break;
                 }
             }
-            prompt.setText("Funcionário removido!");
+
+            //Switch to employee's info page
+            FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("funcionarios.fxml"));
+            scene = new Scene(fxmlLoader.load(), 800 , 450);
+            stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+            stage.setTitle("Sistemas de Funcionários");
+            stage.setScene(scene);
+            stage.show();
+
         }else{
             prompt.setText("Funcionário Inexistente!");
         }
 
-        //Switch to employee's info page
-        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("funcionarios.fxml"));
-        scene = new Scene(fxmlLoader.load(), 800 , 450);
-        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-        stage.setTitle("Sistemas de Funcionários");
-        stage.setScene(scene);
-        stage.show();
     }
 
     @FXML
@@ -189,16 +186,17 @@ public class MainController {
 
         if(CodeValidation.validate(inputCode.getText())){
             prompt.setText("Entrada bem Sucedida");
+            //Switch to employee's info page
+            FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("funcionarios.fxml"));
+            scene = new Scene(fxmlLoader.load(), 800 , 450);
+            stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+            stage.setTitle("Sistemas de Funcionários");
+            stage.setScene(scene);
+            stage.show();
+
         }else{
             prompt.setText("Usuário não encontrado!");
         }
 
-        //Switch to employee's info page
-        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("funcionarios.fxml"));
-        scene = new Scene(fxmlLoader.load(), 800 , 450);
-        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-        stage.setTitle("Sistemas de Funcionários");
-        stage.setScene(scene);
-        stage.show();
     }
 }
