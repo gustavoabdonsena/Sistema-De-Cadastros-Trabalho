@@ -93,25 +93,13 @@ public class MainController {
                 prompt.setText("Funcionário adicionado!");
 
                 //Switch to "add dependents" page
-                /*FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("next-sign-in.fxml"));
-                scene = new Scene(fxmlLoader.load(), 800 , 450);
-                //Add text fields to input the dependents' names
-                VBox vbox = (VBox) scene.lookup("#vbox");
-                for (int i = 0; i < Integer.parseInt(inputQtdDependentes.getText()); i++)
-                {
-                    TextField dependentName = new TextField();
-                    dependentName.setId("#inputDependente" + i);
-                    dependentName.setPromptText("DEPENDENT NAME");
-                    vbox.getChildren().add(dependentName);
-                }*/
-
-                //Switch to employee's info page
-                FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("funcionarios.fxml"));
+                FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("dependentes-sign-in.fxml"));
                 scene = new Scene(fxmlLoader.load(), 800 , 450);
                 stage = (Stage)((Node)event.getSource()).getScene().getWindow();
                 stage.setTitle("Sistemas de Funcionários");
                 stage.setScene(scene);
                 stage.show();
+
             }
         } catch (NumberFormatException e) {
             Alert alert = new Alert(Alert.AlertType.ERROR);
@@ -119,27 +107,6 @@ public class MainController {
             alert.show();
             }
     }
-
-    /*@FXML
-    void addDependentes(ActionEvent event) throws IOException
-    {
-        ArrayList<Dependente> dependentes = new ArrayList<>();
-        for (int i = 0; i < Integer.parseInt(inputQtdDependentes.getText()); i++)
-        {
-            TextField inputDependente = (TextField) scene.lookup("#inputDependente" + i);
-            Dependente dependente = new Dependente(inputDependente.getText());
-            dependentes.add(dependente);
-        }
-        UsuariosList.getFuncionarios().get(-1).setDependentesList(dependentes);
-
-        //Switch to employee's info page
-        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("funcionarios.fxml"));
-        scene = new Scene(fxmlLoader.load(), 800 , 450);
-        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-        stage.setTitle("Sistemas de Funcionários");
-        stage.setScene(scene);
-        stage.show();
-    }*/
 
     @FXML
     void deleteFuncionario(ActionEvent event) throws IOException {
