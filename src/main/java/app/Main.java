@@ -1,7 +1,6 @@
 package app;
 
 import app.database.FileJSONRead;
-import app.database.FileJSONWrite;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
