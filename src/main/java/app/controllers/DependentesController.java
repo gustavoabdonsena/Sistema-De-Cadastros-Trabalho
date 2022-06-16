@@ -42,9 +42,13 @@ public class DependentesController {
 
         if (dependentes.size() == UsuariosList.getFuncionarios().get(index).getDependentes() - 1)
         {
-            add.setDisable(true);
+            dependentes.add(new Dependente(dependentName.getText()));
+            dependentsList.getItems().add(dependentName.getText());
+            prompt.setText("Dependente Adicionado!");
+
             UsuariosList.getFuncionarios().get(index).setDependentesList(dependentes);
             FileJSONWrite.createJSON();
+            add.setDisable(true);
             next.setVisible(true);
         }
         else
