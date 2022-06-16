@@ -7,20 +7,16 @@ import app.database.UsuariosList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
-import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
 import java.io.IOException;
-import java.net.URL;
 import java.util.ArrayList;
-import java.util.ResourceBundle;
 
 public class DependentesController {
 
@@ -41,10 +37,10 @@ public class DependentesController {
     ArrayList<Dependente> dependentes = new ArrayList<>();
 
     @FXML
-    void addDependente(ActionEvent event) {
+    void addDependente() {
         int index = UsuariosList.getFuncionarios().size() - 1;
 
-        if (dependentes.size() == UsuariosList.getFuncionarios().get(index).getDependentes())
+        if (dependentes.size() == UsuariosList.getFuncionarios().get(index).getDependentes() - 1)
         {
             add.setDisable(true);
             UsuariosList.getFuncionarios().get(index).setDependentesList(dependentes);
