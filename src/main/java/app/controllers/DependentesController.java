@@ -65,5 +65,4 @@ public class DependentesController {
         stage.setScene(scene);
         stage.show();
     }
-
 }
