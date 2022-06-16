@@ -31,7 +31,7 @@
                   <Cursor fx:constant="CROSSHAIR" />
                </cursor>
             </Button>
-            <Button fx:id="next" alignment="CENTER" contentDisplay="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#next" prefHeight="40.0" prefWidth="160.0" text="Next" textAlignment="CENTER" textFill="#5516c9" textOverrun="WORD_ELLIPSIS">
+            <Button fx:id="next" alignment="CENTER" contentDisplay="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#next" prefHeight="40.0" prefWidth="160.0" text="Next" textAlignment="CENTER" textFill="#5516c9" textOverrun="WORD_ELLIPSIS" visible="false">
                <font>
                   <Font name="Segoe UI Semibold" size="16.0" />
                </font>

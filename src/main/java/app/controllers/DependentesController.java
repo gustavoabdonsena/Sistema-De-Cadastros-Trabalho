@@ -2,6 +2,7 @@ package app.controllers;
 
 import app.Main;
 import app.client.Dependente;
+import app.database.FileJSONWrite;
 import app.database.UsuariosList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -46,6 +47,9 @@ public class DependentesController {
         if (dependentes.size() == UsuariosList.getFuncionarios().get(index).getDependentes())
         {
             add.setDisable(true);
+            UsuariosList.getFuncionarios().get(index).setDependentesList(dependentes);
+            FileJSONWrite.createJSON();
+            next.setVisible(true);
         }
         else
         {
