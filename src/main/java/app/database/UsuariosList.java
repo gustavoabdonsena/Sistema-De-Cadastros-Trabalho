@@ -23,9 +23,12 @@ public class UsuariosList {
     //este método receberá os funcionários da lista
     public static void createFuncionario(Funcionario funcionario) {
 
-        if(CodeValidation.validate(funcionario)){
+        if(CodeValidation.validate(funcionario))
+        {
             System.out.println("Colocar Warning de nao pode criar");
-        }else {
+        }
+        else
+        {
             System.out.println("Funcionário criado com sucesso");
             addFuncionario(funcionario);
         }
