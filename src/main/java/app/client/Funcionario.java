@@ -39,7 +39,8 @@ public class Funcionario {
         if(salary >=0) {
             this.salary = salary;
         }
-        else {
+        else
+        {
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setContentText("O valor do salário deve ser >= 0.0");
             alert.show();
