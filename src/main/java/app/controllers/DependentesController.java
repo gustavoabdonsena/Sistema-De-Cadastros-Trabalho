@@ -6,43 +6,51 @@ import app.database.UsuariosList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
+import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.net.URL;
 import java.util.ArrayList;
+import java.util.ResourceBundle;
 
 public class DependentesController {
 
     @FXML
-    private Label prompt;
+    private Button add;
     @FXML
     private TextField dependentName;
+
     @FXML
-    private Button add;
+    private ListView<String> dependentsList;
+
     @FXML
     private Button next;
 
-    private ArrayList<Dependente> dependentes = new ArrayList<>();
+    @FXML
+    private Label prompt;
 
+    ArrayList<Dependente> dependentes = new ArrayList<>();
 
     @FXML
-    void addDependente()
-    {
+    void addDependente(ActionEvent event) {
+
         if (dependentes.size() == UsuariosList.getFuncionarios().get(-1).getDependentes())
         {
-            UsuariosList.getFuncionarios().get(-1).setDependentesList(dependentes);
             add.setDisable(true);
-            next.setVisible(true);
         }
         else
         {
             dependentes.add(new Dependente(dependentName.getText()));
-            prompt.setText("Dependente adicionado");
+            dependentsList.getItems().add(dependentName.getText());
+            prompt.setText("Dependente Adicionado!");
         }
     }
 
@@ -66,3 +74,4 @@ public class DependentesController {
         stage.show();
     }
 }
+
