@@ -63,13 +63,5 @@
             <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
          </padding>
       </VBox>
-      <Button alignment="CENTER" contentDisplay="CENTER" layoutX="24.0" layoutY="24.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#backToFirst" prefHeight="40.0" prefWidth="82.0" text="Back" textAlignment="CENTER" textFill="#5516c9" textOverrun="WORD_ELLIPSIS">
-         <font>
-            <Font name="Segoe UI Semibold" size="16.0" />
-         </font>
-         <cursor>
-            <Cursor fx:constant="CROSSHAIR" />
-         </cursor>
-      </Button>
    </children>
 </Pane>

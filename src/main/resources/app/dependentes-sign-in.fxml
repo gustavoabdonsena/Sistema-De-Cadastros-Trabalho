@@ -21,7 +21,7 @@
       <VBox fx:id="vbox" alignment="CENTER" layoutX="69.0" layoutY="144.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefWidth="662.0" spacing="20.0">
          <children>
             <TextField fx:id="dependentName" alignment="CENTER" promptText="DEPENDENT NAME" />
-            <Button alignment="CENTER" contentDisplay="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#addDependente" prefHeight="40.0" prefWidth="160.0" text="Add" textAlignment="CENTER" textFill="#5516c9" textOverrun="WORD_ELLIPSIS">
+            <Button fx:id="add" alignment="CENTER" contentDisplay="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#addDependente" prefHeight="40.0" prefWidth="160.0" text="Add" textAlignment="CENTER" textFill="#5516c9" textOverrun="WORD_ELLIPSIS">
                <font>
                   <Font name="Segoe UI Semibold" size="16.0" />
                </font>
@@ -29,7 +29,7 @@
                   <Cursor fx:constant="CROSSHAIR" />
                </cursor>
             </Button>
-            <Button alignment="CENTER" contentDisplay="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#next" prefHeight="40.0" prefWidth="160.0" text="Next" textAlignment="CENTER" textFill="#5516c9" textOverrun="WORD_ELLIPSIS">
+            <Button fx:id="next" alignment="CENTER" contentDisplay="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#next" prefHeight="40.0" prefWidth="160.0" text="Next" textAlignment="CENTER" textFill="#5516c9" textOverrun="WORD_ELLIPSIS" visible="false">
                <font>
                   <Font name="Segoe UI Semibold" size="16.0" />
                </font>
