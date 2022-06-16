@@ -17,12 +17,12 @@ public class FileJSONWrite {
             for(Funcionario funcionario : UsuariosList.getFuncionarios())
             {
                 JSONObject funcionarioOBJ = new JSONObject();
-                JSONArray dependentesList = (JSONArray) funcionario.getDependentesList();
+                JSONArray dependentesList = new JSONArray();
 
-               /* //Percorre o array de dependentes e guarda em um JSONArray
+                //Percorre o array de dependentes e guarda em um JSONArray
                 funcionario.getDependentesList().forEach(dependente ->{
                     dependentesList.add(dependente.getName().toLowerCase());
-                });*/
+                });
 
                 //Cria os atributos do JSONObject
                 funcionarioOBJ.put("name", funcionario.getName());
