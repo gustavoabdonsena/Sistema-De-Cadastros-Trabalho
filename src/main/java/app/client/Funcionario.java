@@ -1,6 +1,7 @@
 package app.client;
 
 import app.database.CodeValidation;
+import javafx.scene.control.Alert;
 
 import java.util.ArrayList;
 public class Funcionario {
@@ -28,6 +29,9 @@ public class Funcionario {
         }
         else
         {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setContentText("A quantidade de dependentes deve ser >= 0");
+            alert.show();
             throw new IllegalArgumentException("A quantidade de dependentes deve ser >= 0");
         }
 
@@ -36,6 +40,9 @@ public class Funcionario {
             this.salary = salary;
         }
         else {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setContentText("O valor do salário deve ser >= 0.0");
+            alert.show();
             throw new IllegalArgumentException("O valor do salário deve ser >= 0.0");
         }
         setBonus(dependentes);
@@ -95,6 +102,9 @@ public class Funcionario {
         }
         else
         {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setContentText("O valor do salário deve ser >= 0.0");
+            alert.show();
             throw new IllegalArgumentException("O valor do salário deve ser >= 0.0");
         }
 

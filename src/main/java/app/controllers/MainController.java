@@ -103,7 +103,7 @@ public class MainController {
             }
         } catch (NumberFormatException e) {
             Alert alert = new Alert(Alert.AlertType.ERROR);
-            alert.setContentText(e.toString());
+            alert.setContentText(e.getMessage());
             alert.show();
             }
     }
