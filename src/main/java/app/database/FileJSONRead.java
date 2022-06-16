@@ -16,21 +16,31 @@ public class FileJSONRead {
 
     public static void loadJSON(){
 
-        JSONParser jsonParser = new JSONParser();
+        File path = new File("database.json");
 
-        try (FileReader reader = new FileReader("database.json")) {
-            // Read JSON file
+        if(!path.exists())
+        {
+            FileJSONWrite.createJSON();
+        }
+        else
+        {
 
-            Object obj = jsonParser.parse(reader);
+            JSONParser jsonParser = new JSONParser();
 
-            JSONArray userList = (JSONArray) obj;
+            try (FileReader reader = new FileReader(path)) {
+                // Read JSON file
 
-            // Iterate over employee array
-            userList.forEach(user -> parseUserObject((JSONObject) user));
+                Object obj = jsonParser.parse(reader);
 
-        } catch (ParseException | IOException e) {
-            Alert alert  = new Alert(Alert.AlertType.ERROR);
-            alert.setContentText(e.toString());
+                JSONArray userList = (JSONArray) obj;
+
+                // Iterate over employee array
+                userList.forEach(user -> parseUserObject((JSONObject) user));
+
+            } catch (ParseException | IOException e) {
+                Alert alert = new Alert(Alert.AlertType.ERROR);
+                alert.setContentText(e.toString());
+            }
         }
     }
 

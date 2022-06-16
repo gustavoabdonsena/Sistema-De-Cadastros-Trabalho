@@ -21,6 +21,7 @@ import javafx.scene.control.TextField;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Objects;
 
 
 public class MainController {
@@ -160,14 +161,15 @@ public class MainController {
     void removeFuncionario(ActionEvent event) throws IOException {
         //Delete employee from database
         if(CodeValidation.validate(inputCode.getText())){
+
             for (Funcionario funcionario:UsuariosList.getFuncionarios())
             {
-                if (funcionario.getCode() == inputCode.getText())
+                if (Objects.equals(funcionario.getCode(), inputCode.getText()))
                 {
-                    UsuariosList.deleteFuncionario(funcionario);
+                    UsuariosList.funcionarios.remove(funcionario);
+                    FileJSONWrite.createJSON();
                 }
             }
-            FileJSONWrite.createJSON();
             prompt.setText("Funcionário removido!");
         }else{
             prompt.setText("Funcionário Inexistente!");

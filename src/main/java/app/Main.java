@@ -24,7 +24,6 @@ public class Main extends Application {
     }
 
     public static void main(String[] args) {
-        FileJSONWrite.createJSON();
         //Método de carregamento do banco de dados
         FileJSONRead.loadJSON();
         launch();
