@@ -16,7 +16,7 @@ public class Main extends Application {
         FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("first-scene.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 800 , 450);
         stage.setResizable(false);
-        stage.initStyle(StageStyle.UTILITY);
+        stage.initStyle(StageStyle.DECORATED);
         stage.setTitle("Sistemas de Funcionários");
         stage.setScene(scene);
         stage.show();
