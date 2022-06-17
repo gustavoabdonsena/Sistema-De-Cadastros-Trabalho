@@ -42,7 +42,7 @@
                   <Font name="Segoe UI Semibold" size="16.0" />
                </font>
                <cursor>
-                  <Cursor fx:constant="CROSSHAIR" />
+                  <Cursor fx:constant="HAND" />
                </cursor>
             </Button>
             <Button alignment="CENTER" contentDisplay="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#registerNewEmployee" prefHeight="39.0" prefWidth="238.0" text="Register New Employee" textAlignment="CENTER" textFill="#5516c9" textOverrun="WORD_ELLIPSIS">
@@ -50,7 +50,7 @@
                   <Font name="Segoe UI Semibold" size="16.0" />
                </font>
                <cursor>
-                  <Cursor fx:constant="CROSSHAIR" />
+                  <Cursor fx:constant="HAND" />
                </cursor>
             </Button>
             <Label fx:id="prompt" alignment="CENTER" contentDisplay="CENTER" prefHeight="17.0" prefWidth="622.0" textAlignment="CENTER" textFill="#ac87cd" textOverrun="WORD_ELLIPSIS">
@@ -68,7 +68,7 @@
             <Font name="Segoe UI Semibold" size="16.0" />
          </font>
          <cursor>
-            <Cursor fx:constant="CROSSHAIR" />
+            <Cursor fx:constant="HAND" />
          </cursor>
       </Button>
    </children>

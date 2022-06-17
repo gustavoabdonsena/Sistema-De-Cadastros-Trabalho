@@ -29,7 +29,7 @@
                   <Font name="Segoe UI Semibold" size="16.0" />
                </font>
                <cursor>
-                  <Cursor fx:constant="CROSSHAIR" />
+                  <Cursor fx:constant="HAND" />
                </cursor>
             </Button>
             <Button alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#deleteFuncionario" prefHeight="40.0" prefWidth="160.0" text="Delete Employee" textAlignment="CENTER" textFill="#5516c9" textOverrun="WORD_ELLIPSIS">
@@ -37,7 +37,7 @@
                   <Font name="Segoe UI Semibold" size="16.0" />
                </font>
                <cursor>
-                  <Cursor fx:constant="CROSSHAIR" />
+                  <Cursor fx:constant="HAND" />
                </cursor>
             </Button>
             <Label fx:id="prompt" alignment="CENTER" contentDisplay="CENTER" prefHeight="17.0" prefWidth="622.0" textAlignment="CENTER" textFill="#ac87cd" textOverrun="WORD_ELLIPSIS">
