@@ -104,6 +104,9 @@ public class MainController {
                 }
                 else
                 {
+                    FileJSONWrite.createJSON();
+                    prompt.setText("Funcionário adicionado!");
+
                     //Switch to employee's info page
                     FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("funcionarios.fxml"));
                     scene = new Scene(fxmlLoader.load(), 800 , 450);
@@ -112,8 +115,6 @@ public class MainController {
                     stage.setScene(scene);
                     stage.show();
 
-                    FileJSONWrite.createJSON();
-                    prompt.setText("Funcionário adicionado!");
                 }
 
 
