@@ -89,16 +89,33 @@ public class MainController {
                         ,Float.parseFloat(inputSalario.getText())
                 ));
 
-                FileJSONWrite.createJSON();
-                prompt.setText("Funcionário adicionado!");
+                if (Integer.parseInt(inputQtdDependentes.getText()) > 0)
+                {
+                    //Switch to "add dependents" page
+                    FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("dependentes-sign-in.fxml"));
+                    scene = new Scene(fxmlLoader.load(), 800 , 450);
+                    stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+                    stage.setTitle("Sistemas de Funcionários");
+                    stage.setScene(scene);
+                    stage.show();
 
-                //Switch to "add dependents" page
-                FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("dependentes-sign-in.fxml"));
-                scene = new Scene(fxmlLoader.load(), 800 , 450);
-                stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-                stage.setTitle("Sistemas de Funcionários");
-                stage.setScene(scene);
-                stage.show();
+                    FileJSONWrite.createJSON();
+                    prompt.setText("Funcionário adicionado!");
+                }
+                else
+                {
+                    //Switch to employee's info page
+                    FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("funcionarios.fxml"));
+                    scene = new Scene(fxmlLoader.load(), 800 , 450);
+                    stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+                    stage.setTitle("Sistemas de Funcionários");
+                    stage.setScene(scene);
+                    stage.show();
+
+                    FileJSONWrite.createJSON();
+                    prompt.setText("Funcionário adicionado!");
+                }
+
 
             }
         } catch (NumberFormatException e) {
@@ -128,7 +145,7 @@ public class MainController {
             {
                 if (Objects.equals(funcionario.getCode(), inputCode.getText()))
                 {
-                    UsuariosList.funcionarios.remove(funcionario);
+                    UsuariosList.deleteFuncionario(funcionario);
                     FileJSONWrite.createJSON();
                     break;
                 }

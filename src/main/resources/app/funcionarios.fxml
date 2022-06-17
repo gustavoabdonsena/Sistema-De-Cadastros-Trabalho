@@ -31,6 +31,7 @@
               <columns>
                 <TableColumn fx:id="NameColumn" prefWidth="75.0" style="-fx-alignment: center;" text="Funcionário" />
                   <TableColumn fx:id="DependentesColumn" prefWidth="75.0" style="-fx-alignment: center;" text="Dependentes" />
+                  <TableColumn fx:id="SalaryColumn" prefWidth="75.0" style="-fx-alignment: center;" text="Salário" />
                   <TableColumn fx:id="BonusColumn" prefWidth="75.0" style="-fx-alignment: center;" text="Bônus (%)" />
               </columns>
                <columnResizePolicy>
@@ -45,7 +46,7 @@
                   <Cursor fx:constant="CROSSHAIR" />
                </cursor>
             </Button>
-            <Button alignment="CENTER" contentDisplay="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#registerNewEmployee" prefHeight="39.0" prefWidth="238.0" text="Register New Employee" textAlignment="CENTER" textFill="#5516c9" textOverrun="WORD_ELLIPSIS">
+            <Button alignment="CENTER" contentDisplay="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#edit" prefHeight="39.0" prefWidth="135.0" text="Edit Salary" textAlignment="CENTER" textFill="#5516c9" textOverrun="WORD_ELLIPSIS">
                <font>
                   <Font name="Segoe UI Semibold" size="16.0" />
                </font>

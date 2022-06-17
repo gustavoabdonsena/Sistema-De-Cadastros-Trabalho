@@ -29,6 +29,8 @@ public class FuncionariosController implements Initializable {
     @FXML
     private TableColumn<Funcionario, Integer> DependentesColumn;
     @FXML
+    private TableColumn<Funcionario, Integer> SalaryColumn;
+    @FXML
     private TableColumn<Funcionario, Double> BonusColumn;
 
     private ObservableList<Funcionario> funcionarios = FXCollections.observableArrayList();
@@ -39,6 +41,7 @@ public class FuncionariosController implements Initializable {
 
         NameColumn.setCellValueFactory(new PropertyValueFactory<>("name"));
         DependentesColumn.setCellValueFactory(new PropertyValueFactory<>("dependentes"));
+        SalaryColumn.setCellValueFactory(new PropertyValueFactory<>("salary"));
         BonusColumn.setCellValueFactory(new PropertyValueFactory<>("bonus"));
 
         FuncionariosInfo.setItems(funcionarios);
@@ -56,8 +59,8 @@ public class FuncionariosController implements Initializable {
     }
 
     @FXML
-    void registerNewEmployee(ActionEvent event) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("sign-in.fxml"));
+    void edit(ActionEvent event) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("edit.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 800, 450);
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         stage.setTitle("Sistemas de Funcionários");
@@ -74,5 +77,4 @@ public class FuncionariosController implements Initializable {
         stage.setScene(scene);
         stage.show();
     }
-
 }
