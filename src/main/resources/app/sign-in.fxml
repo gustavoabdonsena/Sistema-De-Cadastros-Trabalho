@@ -29,29 +29,29 @@
             <TextField fx:id="inputCargo" alignment="CENTER" promptText="CARGO" />
             <TextField fx:id="inputSalario" alignment="CENTER" promptText="SALARIO" />
             <TextField fx:id="inputQtdDependentes" alignment="CENTER" promptText="QUANTIDADE DE DEPENDENTES" />
-            <Button alignment="CENTER" contentDisplay="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#createFuncionario" prefHeight="40.0" prefWidth="160.0" text="Sign In" textAlignment="CENTER" textFill="#5516c9" textOverrun="WORD_ELLIPSIS">
+            <Button alignment="CENTER" contentDisplay="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#createFuncionario" prefHeight="49.0" prefWidth="188.0" style="-fx-background-color: #6959CD;" text="Sign In" textAlignment="CENTER" textFill="#f9f7ff">
                <font>
                   <Font name="Segoe UI Semibold" size="16.0" />
                </font>
                <cursor>
-                  <Cursor fx:constant="CROSSHAIR" />
+                  <Cursor fx:constant="HAND" />
                </cursor>
             </Button>
-            <Label fx:id="prompt" alignment="CENTER" contentDisplay="CENTER" prefHeight="17.0" prefWidth="622.0" textAlignment="CENTER" textFill="#ac87cd" textOverrun="WORD_ELLIPSIS">
+            <Label fx:id="prompt" alignment="CENTER" contentDisplay="CENTER" prefHeight="17.0" prefWidth="622.0" textAlignment="CENTER" textFill="#f4d9ff" textOverrun="WORD_ELLIPSIS">
                <font>
-                  <Font name="Arial Black" size="12.0" />
+                  <Font name="Arial Black" size="14.0" />
                </font></Label>
          </children>
          <padding>
             <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
          </padding>
       </VBox>
-      <Button alignment="CENTER" contentDisplay="CENTER" layoutX="24.0" layoutY="24.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#backToFirst" prefHeight="40.0" prefWidth="82.0" text="Back" textAlignment="CENTER" textFill="#5516c9" textOverrun="WORD_ELLIPSIS">
+      <Button alignment="CENTER" contentDisplay="CENTER" layoutX="24.0" layoutY="24.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#backToFirst" prefHeight="40.0" prefWidth="82.0" style="-fx-background-color: #6959CD;" text="back" textAlignment="CENTER" textFill="WHITE" textOverrun="WORD_ELLIPSIS">
          <font>
             <Font name="Segoe UI Semibold" size="16.0" />
          </font>
          <cursor>
-            <Cursor fx:constant="CROSSHAIR" />
+            <Cursor fx:constant="HAND" />
          </cursor>
       </Button>
    </children>

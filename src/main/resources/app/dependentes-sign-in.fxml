@@ -19,16 +19,16 @@
             <Image url="@../assets/image/background.jpg" />
          </image>
       </ImageView>
-      <VBox fx:id="vbox" alignment="CENTER" layoutX="69.0" layoutY="70.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="379.0" prefWidth="662.0" spacing="20.0">
+      <VBox fx:id="vbox" alignment="CENTER" layoutX="69.0" layoutY="94.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="356.0" prefWidth="662.0" spacing="20.0">
          <children>
             <ListView fx:id="dependentsList" prefHeight="200.0" prefWidth="200.0" />
             <TextField fx:id="dependentName" alignment="CENTER" promptText="DEPENDENT NAME" />
-            <Button fx:id="add" alignment="CENTER" contentDisplay="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#addDependente" prefHeight="40.0" prefWidth="160.0" text="Add" textAlignment="CENTER" textFill="#5516c9" textOverrun="WORD_ELLIPSIS">
+            <Button fx:id="add" alignment="CENTER" contentDisplay="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#addDependente" prefHeight="55.0" prefWidth="180.0" style="-fx-background-color: #483D8B;" text="Add" textAlignment="CENTER" textFill="WHITE" textOverrun="WORD_ELLIPSIS">
                <font>
                   <Font name="Segoe UI Semibold" size="16.0" />
                </font>
                <cursor>
-                  <Cursor fx:constant="CROSSHAIR" />
+                  <Cursor fx:constant="HAND" />
                </cursor>
             </Button>
             <Button fx:id="next" alignment="CENTER" contentDisplay="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#next" prefHeight="40.0" prefWidth="160.0" text="Next" textAlignment="CENTER" textFill="#5516c9" textOverrun="WORD_ELLIPSIS" visible="false">
@@ -36,7 +36,7 @@
                   <Font name="Segoe UI Semibold" size="16.0" />
                </font>
                <cursor>
-                  <Cursor fx:constant="CROSSHAIR" />
+                  <Cursor fx:constant="HAND" />
                </cursor>
             </Button>
             <Label fx:id="prompt" alignment="CENTER" contentDisplay="CENTER" prefHeight="17.0" prefWidth="622.0" textAlignment="CENTER" textFill="#ac87cd" textOverrun="WORD_ELLIPSIS">
@@ -48,12 +48,12 @@
             <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
          </padding>
       </VBox>
-      <Button alignment="CENTER" contentDisplay="CENTER" layoutX="24.0" layoutY="24.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#backToFirst" prefHeight="40.0" prefWidth="82.0" text="Back" textAlignment="CENTER" textFill="#5516c9" textOverrun="WORD_ELLIPSIS">
+      <Button alignment="CENTER" contentDisplay="CENTER" layoutX="24.0" layoutY="24.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#backToFirst" prefHeight="40.0" prefWidth="82.0" style="-fx-background-color: #483D8B;" text="Back" textAlignment="CENTER" textFill="WHITE" textOverrun="WORD_ELLIPSIS">
          <font>
             <Font name="Segoe UI Semibold" size="16.0" />
          </font>
          <cursor>
-            <Cursor fx:constant="CROSSHAIR" />
+            <Cursor fx:constant="HAND" />
          </cursor>
       </Button>
    </children>
