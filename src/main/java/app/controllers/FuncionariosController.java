@@ -29,7 +29,7 @@ public class FuncionariosController implements Initializable {
     @FXML
     private TableColumn<Funcionario, Integer> DependentesColumn;
     @FXML
-    private TableColumn<Funcionario, Integer> SalaryColumn;
+    private TableColumn<Funcionario, Double> SalaryColumn;
     @FXML
     private TableColumn<Funcionario, Double> BonusColumn;
 
