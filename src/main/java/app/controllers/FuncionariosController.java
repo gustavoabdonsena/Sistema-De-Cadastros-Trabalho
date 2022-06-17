@@ -27,6 +27,8 @@ public class FuncionariosController implements Initializable {
     @FXML
     private TableColumn<Funcionario, String> NameColumn;
     @FXML
+    private TableColumn<Funcionario, String> CodeColumn;
+    @FXML
     private TableColumn<Funcionario, Integer> DependentesColumn;
     @FXML
     private TableColumn<Funcionario, Double> SalaryColumn;
@@ -40,6 +42,7 @@ public class FuncionariosController implements Initializable {
         funcionarios.addAll(UsuariosList.getFuncionarios());
 
         NameColumn.setCellValueFactory(new PropertyValueFactory<>("name"));
+        CodeColumn.setCellValueFactory(new PropertyValueFactory<>("code"));
         DependentesColumn.setCellValueFactory(new PropertyValueFactory<>("dependentes"));
         SalaryColumn.setCellValueFactory(new PropertyValueFactory<>("salary"));
         BonusColumn.setCellValueFactory(new PropertyValueFactory<>("bonus"));

@@ -30,6 +30,7 @@
             <TableView fx:id="FuncionariosInfo" prefHeight="200.0" prefWidth="200.0">
               <columns>
                 <TableColumn fx:id="NameColumn" prefWidth="75.0" style="-fx-alignment: center;" text="Funcionário" />
+                  <TableColumn fx:id="CodeColumn" prefWidth="75.0" style="-fx-alignment: center;" text="Código" />
                   <TableColumn fx:id="DependentesColumn" prefWidth="75.0" style="-fx-alignment: center;" text="Dependentes" />
                   <TableColumn fx:id="SalaryColumn" prefWidth="75.0" style="-fx-alignment: center;" text="Salário" />
                   <TableColumn fx:id="BonusColumn" prefWidth="75.0" style="-fx-alignment: center;" text="Bônus (%)" />
