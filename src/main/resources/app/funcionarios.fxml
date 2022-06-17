@@ -22,7 +22,7 @@
       </ImageView>
       <VBox alignment="TOP_CENTER" layoutX="69.0" layoutY="28.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" spacing="20.0">
          <children>
-            <TextField alignment="CENTER" editable="false" focusTraversable="false" style="-fx-background-color: trasnparent; -fx-text-fill: #5516c9;" text="Funcionários">
+            <TextField alignment="CENTER" editable="false" focusTraversable="false" style="-fx-background-color: trasnparent; -fx-text-fill: #FFFAFA;" text="Funcionários">
                <font>
                   <Font name="Segoe UI Semibold" size="18.0" />
                </font>
@@ -37,7 +37,7 @@
                   <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
                </columnResizePolicy>
             </TableView>
-            <Button alignment="CENTER" contentDisplay="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#deleteFuncionario" prefHeight="39.0" prefWidth="134.0" text="Delete" textAlignment="CENTER" textFill="#5516c9" textOverrun="WORD_ELLIPSIS">
+            <Button alignment="CENTER" contentDisplay="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#deleteFuncionario" prefHeight="40.0" prefWidth="150.0" style="-fx-background-color: #483D8B;" text="Delete" textAlignment="CENTER" textFill="WHITE" textOverrun="WORD_ELLIPSIS">
                <font>
                   <Font name="Segoe UI Semibold" size="16.0" />
                </font>
@@ -45,7 +45,7 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </Button>
-            <Button alignment="CENTER" contentDisplay="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#registerNewEmployee" prefHeight="39.0" prefWidth="238.0" text="Register New Employee" textAlignment="CENTER" textFill="#5516c9" textOverrun="WORD_ELLIPSIS">
+            <Button alignment="CENTER" contentDisplay="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#registerNewEmployee" prefHeight="39.0" prefWidth="216.0" style="-fx-background-color: #483D8B;" text="Register New Employee" textAlignment="CENTER" textFill="WHITE" textOverrun="WORD_ELLIPSIS">
                <font>
                   <Font name="Segoe UI Semibold" size="16.0" />
                </font>
@@ -63,7 +63,7 @@
             <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
          </padding>
       </VBox>
-      <Button alignment="CENTER" contentDisplay="CENTER" layoutX="34.0" layoutY="34.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#backToFirst" prefHeight="40.0" prefWidth="82.0" text="Back" textAlignment="CENTER" textFill="#5516c9" textOverrun="WORD_ELLIPSIS">
+      <Button alignment="CENTER" contentDisplay="CENTER" layoutX="34.0" layoutY="34.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#backToFirst" prefHeight="40.0" prefWidth="82.0" style="-fx-background-color: #483D8B;" text="Back" textAlignment="CENTER" textFill="WHITE" textOverrun="WORD_ELLIPSIS">
          <font>
             <Font name="Segoe UI Semibold" size="16.0" />
          </font>
